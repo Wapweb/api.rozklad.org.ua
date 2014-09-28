@@ -1,0 +1,10 @@
+php_flag magic_quotes_gpc off
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+
+RewriteRule !\.(js|gif|png|jpg|css|html)$ index.php
