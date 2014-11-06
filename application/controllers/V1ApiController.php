@@ -18,7 +18,7 @@ class V1ApiController extends BaseApiController {
     {
         $week_number = date("W");
         $this->data = $week_number%2 ==0 ? 1 : 2;
-        return $this->send(200);
+        return $this->send(200,Cache::NoCache);
     }
 
     public function groupsAction()

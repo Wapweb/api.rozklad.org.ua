@@ -19,13 +19,16 @@ abstract class BaseApiController  {
         $this->_fc = FrontApiController::getInstance();
     }
 
-    protected function send($status = 200)
+    protected function send($status = 200, $isCache = Cache::CanCache)
     {
         header("HTTP/1.1 " . $status . " " . $this->requestStatus($status));
         header('Content-Type: application/json; charset=utf-8');
 		header('Access-Control-Allow-Origin: *');
 		header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
-        $this->saveData();
+
+        if($isCache == Cache::CanCache)
+            $this->saveData();
+
         return json_encode($this->data,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
     }
 
