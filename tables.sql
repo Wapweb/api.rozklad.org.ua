@@ -1,10 +1,4 @@
 --
--- База данных: `rozklad`
---
-
--- --------------------------------------------------------
-
---
 -- Структура таблицы `group`
 --
 
@@ -18,7 +12,7 @@ CREATE TABLE IF NOT EXISTS `group` (
   `group_anomaly` enum('0','1') NOT NULL DEFAULT '0',
   PRIMARY KEY (`group_id`),
   KEY `group_full_name` (`group_full_name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1784 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1861 ;
 
 -- --------------------------------------------------------
 
@@ -41,5 +35,37 @@ CREATE TABLE IF NOT EXISTS `lesson` (
   `time_end` time NOT NULL,
   `rate` enum('1','0.5','1.5') NOT NULL DEFAULT '1',
   `lesson_room_type` varchar(500) NOT NULL DEFAULT '',
-  PRIMARY KEY (`lesson_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=36349 ;
+  PRIMARY KEY (`lesson_id`),
+  KEY `group_id` (`group_id`),
+  KEY `day_number` (`day_number`),
+  KEY `lesson_week` (`lesson_week`),
+  KEY `time_start` (`time_start`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=38318 ;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `teacher`
+--
+
+CREATE TABLE IF NOT EXISTS `teacher` (
+  `teacher_id` int(11) NOT NULL AUTO_INCREMENT,
+  `teacher_name` varchar(255) NOT NULL,
+  `teacher_url` varchar(1000) NOT NULL,
+  `problem` enum('0','1') NOT NULL DEFAULT '0',
+  PRIMARY KEY (`teacher_id`),
+  KEY `teacher_name` (`teacher_name`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3970 ;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `teacher_lesson`
+--
+
+CREATE TABLE IF NOT EXISTS `teacher_lesson` (
+  `teacher_id` int(11) NOT NULL,
+  `lesson_id` int(11) NOT NULL,
+  KEY `teacher_id` (`teacher_id`),
+  KEY `lesson_id` (`lesson_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -1,0 +1,814 @@
+{
+    "statusCode": 200,
+    "timeStamp": 1421089214,
+    "message": "Ok",
+    "debugInfo": null,
+    "meta": null,
+    "data": {
+        "group": {
+            "group_id": 460,
+            "group_full_name": "іа-23",
+            "group_prefix": "іа",
+            "group_okr": "bachelor",
+            "group_type": "daily",
+            "group_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?g=d65b77ca-6985-421f-b44a-5aa44e3a1577"
+        },
+        "current_week": 2,
+        "weeks": {
+            "1": {
+                "week_number": 1,
+                "days": {
+                    "1": {
+                        "day_name": "Понеділок",
+                        "day_number": 1,
+                        "lessons": [
+                            {
+                                "lesson_id": "8980",
+                                "group_id": "460",
+                                "day_number": "1",
+                                "day_name": "Понеділок",
+                                "lesson_name": "ОЗПОІ",
+                                "lesson_number": "2",
+                                "lesson_room": "303-18",
+                                "lesson_type": "Лек",
+                                "teacher_name": "ст.вик. Моргаль О. М.",
+                                "lesson_week": "1",
+                                "time_start": "10:25:00",
+                                "time_end": "12:00:00",
+                                "rate": "1",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "2183",
+                                        "teacher_name": "Моргаль Олег Михайлович",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=48c84c9c-7af8-4c08-9c5a-4045aace8756"
+                                    }
+                                ]
+                            },
+                            {
+                                "lesson_id": "8985",
+                                "group_id": "460",
+                                "day_number": "1",
+                                "day_name": "Понеділок",
+                                "lesson_name": "К.крипт.",
+                                "lesson_number": "3",
+                                "lesson_room": "533-18",
+                                "lesson_type": "Лаб",
+                                "teacher_name": "ас. Дорошенко К. С.,   ас. Дорогий Я. Ю.",
+                                "lesson_week": "1",
+                                "time_start": "12:20:00",
+                                "time_end": "13:55:00",
+                                "rate": "1",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "967",
+                                        "teacher_name": "Дорогий Ярослав Юрійович",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=1eea73f2-9f6d-41d0-97ae-49f444dbfce1"
+                                    },
+                                    {
+                                        "teacher_id": "971",
+                                        "teacher_name": "Дорошенко Катерина Сергіївна",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=b62429e2-150e-4bbc-81ee-02d78208f582"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "2": {
+                        "day_name": "Вівторок",
+                        "day_number": 2,
+                        "lessons": [
+                            {
+                                "lesson_id": "8981",
+                                "group_id": "460",
+                                "day_number": "2",
+                                "day_name": "Вівторок",
+                                "lesson_name": "Мод.проц. і сист.",
+                                "lesson_number": "2",
+                                "lesson_room": "309-18",
+                                "lesson_type": "Прак",
+                                "teacher_name": "ас. Жеребко В. А.",
+                                "lesson_week": "1",
+                                "time_start": "10:25:00",
+                                "time_end": "12:00:00",
+                                "rate": "1",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "1065",
+                                        "teacher_name": "Жеребко Валерій Анатолійович",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=606e79ca-339d-4a28-8587-6c095f0266a7"
+                                    }
+                                ]
+                            },
+                            {
+                                "lesson_id": "8986",
+                                "group_id": "460",
+                                "day_number": "2",
+                                "day_name": "Вівторок",
+                                "lesson_name": "Основи ТАУ",
+                                "lesson_number": "3",
+                                "lesson_room": "304-18",
+                                "lesson_type": "Лек",
+                                "teacher_name": "доц. Репнікова Н. Б.",
+                                "lesson_week": "1",
+                                "time_start": "12:20:00",
+                                "time_end": "13:55:00",
+                                "rate": "1",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "2765",
+                                        "teacher_name": "Репнікова Наталія Борисівна",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=c0976766-98a3-45cc-82df-e05b13129271"
+                                    }
+                                ]
+                            },
+                            {
+                                "lesson_id": "8990",
+                                "group_id": "460",
+                                "day_number": "2",
+                                "day_name": "Вівторок",
+                                "lesson_name": "Логіка",
+                                "lesson_number": "4",
+                                "lesson_room": "304-18",
+                                "lesson_type": "Лек",
+                                "teacher_name": "вик. Потіщук О. О.",
+                                "lesson_week": "1",
+                                "time_start": "14:15:00",
+                                "time_end": "15:50:00",
+                                "rate": "1",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "2665",
+                                        "teacher_name": "Потіщук Ольга Олегівна",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=7ce805c3-c7b4-4cc7-954e-1245a862edeb"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "3": {
+                        "day_name": "Середа",
+                        "day_number": 3,
+                        "lessons": [
+                            {
+                                "lesson_id": "8978",
+                                "group_id": "460",
+                                "day_number": "3",
+                                "day_name": "Середа",
+                                "lesson_name": "СТП-2",
+                                "lesson_number": "1",
+                                "lesson_room": "534-18",
+                                "lesson_type": "Лаб",
+                                "teacher_name": "ас. Резнік Д. І.,   ст.вик. Ульяницька К. О.",
+                                "lesson_week": "1",
+                                "time_start": "08:30:00",
+                                "time_end": "10:05:00",
+                                "rate": "1",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "2757",
+                                        "teacher_name": "Резнік Д. І.",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=bdd5e10b-556d-4a69-b88e-120b8ea97ada"
+                                    },
+                                    {
+                                        "teacher_id": "3374",
+                                        "teacher_name": "Ульяницька К. О.",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=2216cad4-4cc5-4246-bb83-21438dd50d5f"
+                                    }
+                                ]
+                            },
+                            {
+                                "lesson_id": "8982",
+                                "group_id": "460",
+                                "day_number": "3",
+                                "day_name": "Середа",
+                                "lesson_name": "Мод.проц. і сист.",
+                                "lesson_number": "2",
+                                "lesson_room": "209а-18",
+                                "lesson_type": "Лек",
+                                "teacher_name": "ас. Жеребко В. А.",
+                                "lesson_week": "1",
+                                "time_start": "10:25:00",
+                                "time_end": "12:00:00",
+                                "rate": "1",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "1065",
+                                        "teacher_name": "Жеребко Валерій Анатолійович",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=606e79ca-339d-4a28-8587-6c095f0266a7"
+                                    }
+                                ]
+                            },
+                            {
+                                "lesson_id": "8987",
+                                "group_id": "460",
+                                "day_number": "3",
+                                "day_name": "Середа",
+                                "lesson_name": "К.крипт.",
+                                "lesson_number": "3",
+                                "lesson_room": "339-18",
+                                "lesson_type": "Лек",
+                                "teacher_name": "доц. Полторак В. П.",
+                                "lesson_week": "1",
+                                "time_start": "12:20:00",
+                                "time_end": "13:55:00",
+                                "rate": "1",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "2621",
+                                        "teacher_name": "Полторак Вадим Петрович",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=50efba3e-9e4b-4dbe-b836-0ac7ccaca408"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "4": {
+                        "day_name": "Четвер",
+                        "day_number": 4,
+                        "lessons": [
+                            {
+                                "lesson_id": "8983",
+                                "group_id": "460",
+                                "day_number": "4",
+                                "day_name": "Четвер",
+                                "lesson_name": "Комп.електр.2",
+                                "lesson_number": "2",
+                                "lesson_room": "302-18",
+                                "lesson_type": "Лек",
+                                "teacher_name": "доц. Новацький А. О.",
+                                "lesson_week": "1",
+                                "time_start": "10:25:00",
+                                "time_end": "12:00:00",
+                                "rate": "1",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "2310",
+                                        "teacher_name": "Новацький Анатолій Олександрович",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=aaf53a6b-d63a-4997-8fc4-06c68223fa5c"
+                                    }
+                                ]
+                            },
+                            {
+                                "lesson_id": "8988",
+                                "group_id": "460",
+                                "day_number": "4",
+                                "day_name": "Четвер",
+                                "lesson_name": "Екон.-1",
+                                "lesson_number": "3",
+                                "lesson_room": "311-18",
+                                "lesson_type": "Прак",
+                                "teacher_name": "",
+                                "lesson_week": "1",
+                                "time_start": "12:20:00",
+                                "time_end": "13:55:00",
+                                "rate": "1",
+                                "teachers": [
+
+                                ]
+                            },
+                            {
+                                "lesson_id": "8991",
+                                "group_id": "460",
+                                "day_number": "4",
+                                "day_name": "Четвер",
+                                "lesson_name": "Основи ТАУ",
+                                "lesson_number": "4",
+                                "lesson_room": "307-18",
+                                "lesson_type": "Прак",
+                                "teacher_name": "ас. Килимник О. М.",
+                                "lesson_week": "1",
+                                "time_start": "14:15:00",
+                                "time_end": "15:50:00",
+                                "rate": "1",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "1350",
+                                        "teacher_name": "Килимник О. М.",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=d1ef0ddb-e84a-42e4-b18a-5872db12b928"
+                                    }
+                                ]
+                            },
+                            {
+                                "lesson_id": "8993",
+                                "group_id": "460",
+                                "day_number": "4",
+                                "day_name": "Четвер",
+                                "lesson_name": "Ін. мова проф-1. Проф",
+                                "lesson_number": "5",
+                                "lesson_room": "531-18",
+                                "lesson_type": "Прак",
+                                "teacher_name": "",
+                                "lesson_week": "1",
+                                "time_start": "16:10:00",
+                                "time_end": "17:45:00",
+                                "rate": "1",
+                                "teachers": [
+
+                                ]
+                            }
+                        ]
+                    },
+                    "5": {
+                        "day_name": "П’ятниця",
+                        "day_number": 5,
+                        "lessons": [
+                            {
+                                "lesson_id": "8979",
+                                "group_id": "460",
+                                "day_number": "5",
+                                "day_name": "П’ятниця",
+                                "lesson_name": "Безпека",
+                                "lesson_number": "1",
+                                "lesson_room": "302-18",
+                                "lesson_type": "Лек",
+                                "teacher_name": "доц. Праховнік Н. А.",
+                                "lesson_week": "1",
+                                "time_start": "08:30:00",
+                                "time_end": "10:05:00",
+                                "rate": "1",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "2672",
+                                        "teacher_name": "Праховнік Наталія Артурівна",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=f9dcc438-66e6-4687-8ac3-c3de4eb00f4b"
+                                    }
+                                ]
+                            },
+                            {
+                                "lesson_id": "8984",
+                                "group_id": "460",
+                                "day_number": "5",
+                                "day_name": "П’ятниця",
+                                "lesson_name": "СТП-2",
+                                "lesson_number": "2",
+                                "lesson_room": "301-18",
+                                "lesson_type": "Лек",
+                                "teacher_name": "доц. Амонс О. А.",
+                                "lesson_week": "1",
+                                "time_start": "10:25:00",
+                                "time_end": "12:00:00",
+                                "rate": "1",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "40",
+                                        "teacher_name": "Амонс Олександр Анатолійович",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=4356bb21-cfbe-4699-91ac-757a102e86c2"
+                                    }
+                                ]
+                            },
+                            {
+                                "lesson_id": "8989",
+                                "group_id": "460",
+                                "day_number": "5",
+                                "day_name": "П’ятниця",
+                                "lesson_name": "Ін. мова проф-1. Проф",
+                                "lesson_number": "3",
+                                "lesson_room": "531-18",
+                                "lesson_type": "Прак",
+                                "teacher_name": "ст.вик. Шевченко О. М.",
+                                "lesson_week": "1",
+                                "time_start": "12:20:00",
+                                "time_end": "13:55:00",
+                                "rate": "1",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "3713",
+                                        "teacher_name": "Шевченко Ольга Миколаївна",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=e4882e95-01aa-4f5f-904c-1dc67efb8607"
+                                    }
+                                ]
+                            },
+                            {
+                                "lesson_id": "8992",
+                                "group_id": "460",
+                                "day_number": "5",
+                                "day_name": "П’ятниця",
+                                "lesson_name": "ОЗПОІ",
+                                "lesson_number": "4",
+                                "lesson_room": "534-18",
+                                "lesson_type": "Лаб",
+                                "teacher_name": "ст.вик. Моргаль О. М.,   ст.вик. Букасов М. М.",
+                                "lesson_week": "1",
+                                "time_start": "14:15:00",
+                                "time_end": "15:50:00",
+                                "rate": "1",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "375",
+                                        "teacher_name": "Букасов Максим Михайлович",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=aef7fcc7-96c0-4e6f-a930-1c47b6075e0f"
+                                    },
+                                    {
+                                        "teacher_id": "2183",
+                                        "teacher_name": "Моргаль Олег Михайлович",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=48c84c9c-7af8-4c08-9c5a-4045aace8756"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "6": {
+                        "day_name": "Субота",
+                        "day_number": 6,
+                        "lessons": [
+
+                        ]
+                    }
+                }
+            },
+            "2": {
+                "week_number": 2,
+                "days": {
+                    "1": {
+                        "day_name": "Понеділок",
+                        "day_number": 1,
+                        "lessons": [
+                            {
+                                "lesson_id": "8995",
+                                "group_id": "460",
+                                "day_number": "1",
+                                "day_name": "Понеділок",
+                                "lesson_name": "Екон.-1",
+                                "lesson_number": "2",
+                                "lesson_room": "303-18",
+                                "lesson_type": "Лек",
+                                "teacher_name": "вик. Єрешко Ю. О.",
+                                "lesson_week": "2",
+                                "time_start": "10:25:00",
+                                "time_end": "12:00:00",
+                                "rate": "1",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "1037",
+                                        "teacher_name": "Єрешко Ю О",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=b7e47f04-1fcc-488e-9034-58912770499d"
+                                    }
+                                ]
+                            },
+                            {
+                                "lesson_id": "9000",
+                                "group_id": "460",
+                                "day_number": "1",
+                                "day_name": "Понеділок",
+                                "lesson_name": "К.крипт.",
+                                "lesson_number": "3",
+                                "lesson_room": "533-18",
+                                "lesson_type": "Лаб",
+                                "teacher_name": "ас. Дорошенко К. С.,   ас. Дорогий Я. Ю.",
+                                "lesson_week": "2",
+                                "time_start": "12:20:00",
+                                "time_end": "13:55:00",
+                                "rate": "1",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "967",
+                                        "teacher_name": "Дорогий Ярослав Юрійович",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=1eea73f2-9f6d-41d0-97ae-49f444dbfce1"
+                                    },
+                                    {
+                                        "teacher_id": "971",
+                                        "teacher_name": "Дорошенко Катерина Сергіївна",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=b62429e2-150e-4bbc-81ee-02d78208f582"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "2": {
+                        "day_name": "Вівторок",
+                        "day_number": 2,
+                        "lessons": [
+                            {
+                                "lesson_id": "8996",
+                                "group_id": "460",
+                                "day_number": "2",
+                                "day_name": "Вівторок",
+                                "lesson_name": "Безпека (1-9), Безпека",
+                                "lesson_number": "2",
+                                "lesson_room": "227-18",
+                                "lesson_type": "Прак",
+                                "teacher_name": "ас. Качинська Н. Ф.",
+                                "lesson_week": "2",
+                                "time_start": "10:25:00",
+                                "time_end": "12:00:00",
+                                "rate": "1",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "1334",
+                                        "teacher_name": "Качинська Наталія Федорівна",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=0371a4a2-5465-443d-a685-526f1a326a85"
+                                    }
+                                ]
+                            },
+                            {
+                                "lesson_id": "9001",
+                                "group_id": "460",
+                                "day_number": "2",
+                                "day_name": "Вівторок",
+                                "lesson_name": "Основи ТАУ",
+                                "lesson_number": "3",
+                                "lesson_room": "304-18",
+                                "lesson_type": "Лек",
+                                "teacher_name": "доц. Репнікова Н. Б.",
+                                "lesson_week": "2",
+                                "time_start": "12:20:00",
+                                "time_end": "13:55:00",
+                                "rate": "1",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "2765",
+                                        "teacher_name": "Репнікова Наталія Борисівна",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=c0976766-98a3-45cc-82df-e05b13129271"
+                                    }
+                                ]
+                            },
+                            {
+                                "lesson_id": "9005",
+                                "group_id": "460",
+                                "day_number": "2",
+                                "day_name": "Вівторок",
+                                "lesson_name": "Логіка",
+                                "lesson_number": "4",
+                                "lesson_room": "304-18",
+                                "lesson_type": "Лек",
+                                "teacher_name": "вик. Потіщук О. О.",
+                                "lesson_week": "2",
+                                "time_start": "14:15:00",
+                                "time_end": "15:50:00",
+                                "rate": "1",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "2665",
+                                        "teacher_name": "Потіщук Ольга Олегівна",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=7ce805c3-c7b4-4cc7-954e-1245a862edeb"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "3": {
+                        "day_name": "Середа",
+                        "day_number": 3,
+                        "lessons": [
+                            {
+                                "lesson_id": "8994",
+                                "group_id": "460",
+                                "day_number": "3",
+                                "day_name": "Середа",
+                                "lesson_name": "СТП-2",
+                                "lesson_number": "1",
+                                "lesson_room": "534-18",
+                                "lesson_type": "Лаб",
+                                "teacher_name": "ас. Резнік Д. І.,   ст.вик. Ульяницька К. О.",
+                                "lesson_week": "2",
+                                "time_start": "08:30:00",
+                                "time_end": "10:05:00",
+                                "rate": "1",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "2757",
+                                        "teacher_name": "Резнік Д. І.",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=bdd5e10b-556d-4a69-b88e-120b8ea97ada"
+                                    },
+                                    {
+                                        "teacher_id": "3374",
+                                        "teacher_name": "Ульяницька К. О.",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=2216cad4-4cc5-4246-bb83-21438dd50d5f"
+                                    }
+                                ]
+                            },
+                            {
+                                "lesson_id": "8997",
+                                "group_id": "460",
+                                "day_number": "3",
+                                "day_name": "Середа",
+                                "lesson_name": "Мод.проц. і сист.",
+                                "lesson_number": "2",
+                                "lesson_room": "209а-18",
+                                "lesson_type": "Лек",
+                                "teacher_name": "ас. Жеребко В. А.",
+                                "lesson_week": "2",
+                                "time_start": "10:25:00",
+                                "time_end": "12:00:00",
+                                "rate": "1",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "1065",
+                                        "teacher_name": "Жеребко Валерій Анатолійович",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=606e79ca-339d-4a28-8587-6c095f0266a7"
+                                    }
+                                ]
+                            },
+                            {
+                                "lesson_id": "9002",
+                                "group_id": "460",
+                                "day_number": "3",
+                                "day_name": "Середа",
+                                "lesson_name": "СТП-2",
+                                "lesson_number": "3",
+                                "lesson_room": "339-18",
+                                "lesson_type": "Лек",
+                                "teacher_name": "доц. Амонс О. А.",
+                                "lesson_week": "2",
+                                "time_start": "12:20:00",
+                                "time_end": "13:55:00",
+                                "rate": "0.5",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "40",
+                                        "teacher_name": "Амонс Олександр Анатолійович",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=4356bb21-cfbe-4699-91ac-757a102e86c2"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "4": {
+                        "day_name": "Четвер",
+                        "day_number": 4,
+                        "lessons": [
+                            {
+                                "lesson_id": "8998",
+                                "group_id": "460",
+                                "day_number": "4",
+                                "day_name": "Четвер",
+                                "lesson_name": "Комп.електр.2",
+                                "lesson_number": "2",
+                                "lesson_room": "302-18",
+                                "lesson_type": "Лек",
+                                "teacher_name": "доц. Новацький А. О.",
+                                "lesson_week": "2",
+                                "time_start": "10:25:00",
+                                "time_end": "12:00:00",
+                                "rate": "1",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "2310",
+                                        "teacher_name": "Новацький Анатолій Олександрович",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=aaf53a6b-d63a-4997-8fc4-06c68223fa5c"
+                                    }
+                                ]
+                            },
+                            {
+                                "lesson_id": "9003",
+                                "group_id": "460",
+                                "day_number": "4",
+                                "day_name": "Четвер",
+                                "lesson_name": "Основи ТАУ",
+                                "lesson_number": "3",
+                                "lesson_room": "534-18",
+                                "lesson_type": "Лаб",
+                                "teacher_name": "доц. Репнікова Н. Б.,   ст.вик. Писаренко А. В.",
+                                "lesson_week": "2",
+                                "time_start": "12:20:00",
+                                "time_end": "13:55:00",
+                                "rate": "1",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "2544",
+                                        "teacher_name": "Писаренко Андрій Володимирович",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=f9e88b1b-5935-4198-ae2f-b354302a13a7"
+                                    },
+                                    {
+                                        "teacher_id": "2765",
+                                        "teacher_name": "Репнікова Наталія Борисівна",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=c0976766-98a3-45cc-82df-e05b13129271"
+                                    }
+                                ]
+                            },
+                            {
+                                "lesson_id": "9006",
+                                "group_id": "460",
+                                "day_number": "4",
+                                "day_name": "Четвер",
+                                "lesson_name": "К.крипт.",
+                                "lesson_number": "4",
+                                "lesson_room": "533-18",
+                                "lesson_type": "Лаб",
+                                "teacher_name": "ас. Дорогий Я. Ю.,   ас. Дорошенко К. С.",
+                                "lesson_week": "2",
+                                "time_start": "14:15:00",
+                                "time_end": "15:50:00",
+                                "rate": "0.5",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "967",
+                                        "teacher_name": "Дорогий Ярослав Юрійович",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=1eea73f2-9f6d-41d0-97ae-49f444dbfce1"
+                                    },
+                                    {
+                                        "teacher_id": "971",
+                                        "teacher_name": "Дорошенко Катерина Сергіївна",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=b62429e2-150e-4bbc-81ee-02d78208f582"
+                                    }
+                                ]
+                            },
+                            {
+                                "lesson_id": "9008",
+                                "group_id": "460",
+                                "day_number": "4",
+                                "day_name": "Четвер",
+                                "lesson_name": "Ін. мова проф-1. Проф",
+                                "lesson_number": "5",
+                                "lesson_room": "531-18",
+                                "lesson_type": "Прак",
+                                "teacher_name": "",
+                                "lesson_week": "2",
+                                "time_start": "16:10:00",
+                                "time_end": "17:45:00",
+                                "rate": "1",
+                                "teachers": [
+
+                                ]
+                            }
+                        ]
+                    },
+                    "5": {
+                        "day_name": "П’ятниця",
+                        "day_number": 5,
+                        "lessons": [
+                            {
+                                "lesson_id": "8999",
+                                "group_id": "460",
+                                "day_number": "5",
+                                "day_name": "П’ятниця",
+                                "lesson_name": "СТП-2",
+                                "lesson_number": "2",
+                                "lesson_room": "301-18",
+                                "lesson_type": "Лек",
+                                "teacher_name": "доц. Амонс О. А.",
+                                "lesson_week": "2",
+                                "time_start": "10:25:00",
+                                "time_end": "12:00:00",
+                                "rate": "1",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "40",
+                                        "teacher_name": "Амонс Олександр Анатолійович",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=4356bb21-cfbe-4699-91ac-757a102e86c2"
+                                    }
+                                ]
+                            },
+                            {
+                                "lesson_id": "9004",
+                                "group_id": "460",
+                                "day_number": "5",
+                                "day_name": "П’ятниця",
+                                "lesson_name": "Ін. мова проф-1. Проф",
+                                "lesson_number": "3",
+                                "lesson_room": "531-18",
+                                "lesson_type": "Прак",
+                                "teacher_name": "ст.вик. Шевченко О. М.",
+                                "lesson_week": "2",
+                                "time_start": "12:20:00",
+                                "time_end": "13:55:00",
+                                "rate": "1",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "3713",
+                                        "teacher_name": "Шевченко Ольга Миколаївна",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=e4882e95-01aa-4f5f-904c-1dc67efb8607"
+                                    }
+                                ]
+                            },
+                            {
+                                "lesson_id": "9007",
+                                "group_id": "460",
+                                "day_number": "5",
+                                "day_name": "П’ятниця",
+                                "lesson_name": "Комп.електр.2",
+                                "lesson_number": "4",
+                                "lesson_room": "517-18",
+                                "lesson_type": "Лаб",
+                                "teacher_name": "ст.вик. Долина В. Г.,   ас. Галушко Д. О.",
+                                "lesson_week": "2",
+                                "time_start": "14:15:00",
+                                "time_end": "15:50:00",
+                                "rate": "1",
+                                "teachers": [
+                                    {
+                                        "teacher_id": "597",
+                                        "teacher_name": "Галушко Дмитро Олександрович",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=986f0419-3f62-48f7-acb8-2492a2c5029f"
+                                    },
+                                    {
+                                        "teacher_id": "956",
+                                        "teacher_name": "Долина Віктор Георгійович",
+                                        "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=78a5b574-b05e-432b-919d-95f2f165ef36"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "6": {
+                        "day_name": "Субота",
+                        "day_number": 6,
+                        "lessons": [
+
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

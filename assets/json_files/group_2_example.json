@@ -1,0 +1,15 @@
+{
+    "statusCode": 200,
+    "timeStamp": 1421087443,
+    "message": "Ok",
+    "debugInfo": null,
+    "meta": null,
+    "data": {
+        "group_id": 460,
+        "group_full_name": "іа-23",
+        "group_prefix": "іа",
+        "group_okr": "bachelor",
+        "group_type": "daily",
+        "group_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?g=d65b77ca-6985-421f-b44a-5aa44e3a1577"
+    }
+}

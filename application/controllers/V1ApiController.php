@@ -11,7 +11,7 @@ class V1ApiController extends BaseApiController {
     public function indexAction()
     {
         $view = new View();
-        return $view->render("index.php");
+        return $view->render("v1/index.php");
     }
 
     public function weeksAction()
@@ -47,30 +47,19 @@ class V1ApiController extends BaseApiController {
             return $this->getAllGroups($offset,$limit);
         }
 
-        $groupModel = GroupModel::getByName($group_name);
+        $groupModel = GroupModel::getByNameOrId($group_name);
         if($groupModel != null)
         {
             $this->data = $groupModel;
         }
 
-        return $this->send(200);
+        return $this->send(200,Cache::NoCache);
     }
 
-    private function searchGroups($searchValue)
+    public function groups_lessonsRelationAction($data)
     {
-        $group_name = urldecode($searchValue);
-        $this->data = GroupModel::searchByName($group_name);
-        return $this->send(200);
-    }
-
-    private function getAllGroups($offset,$limit)
-    {
-        $this->data = GroupModel::getAll($offset,$limit);
-        return $this->send(200);
-    }
-
-    private function groupsLessons($groupName)
-    {
+        $groupName = $data["groups"];
+        $groupName = urldecode($groupName);
         $cond = "";
         if(isset($_GET["week"]))
         {
@@ -90,7 +79,21 @@ class V1ApiController extends BaseApiController {
             }
             $cond.= " AND day_number = $day";
         }
-        $this->data = LessonModel::getAllByGroupName($groupName,$cond);
+        $this->data = LessonModel::getAllByGroupNameOrGroupId($groupName,$cond);
         return $this->send(200);
     }
+
+    private function searchGroups($searchValue)
+    {
+        $group_name = urldecode($searchValue);
+        $this->data = GroupModel::searchByName($group_name);
+        return $this->send(200);
+    }
+
+    private function getAllGroups($offset,$limit)
+    {
+        $this->data = GroupModel::getAll($offset,$limit);
+        return $this->send(200);
+    }
+
 } 

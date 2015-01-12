@@ -3,7 +3,7 @@ define('HOME','http://'.$_SERVER['HTTP_HOST']);
 define('ROOT',  dirname( __FILE__ ) );
 
 date_default_timezone_set("Europe/Kiev");
-error_reporting(0);
+error_reporting(9);
 set_include_path(get_include_path()
     .PATH_SEPARATOR.'application/controllers'
     .PATH_SEPARATOR.'application/models'
@@ -18,6 +18,8 @@ spl_autoload_register('auto');
 
 try
 {
+
+    /** @var FrontApiController $api */
 	$api = FrontApiController::getInstance();
 
 	$cacheData = BaseApiController::getDataFromCache($api->getQuery());
@@ -31,7 +33,7 @@ try
 	}
 	else
 	{
-		$db = new PDO("mysql:dbname=DATABASE_NAME;host=HOST_NAME","USER_NAME","USER_PASS");
+		$db = new PDO("mysql:dbname=rozklad;host=localhost","wapweb","1111");
 		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$db->query("SET NAMES utf8");
 		Registry::set('db',$db);
@@ -39,7 +41,12 @@ try
 		echo $api->processApi();
 	}
 
-} catch (Exception $e)
+}
+catch (ApiException $e)
+{
+    echo $e->getMessage();
+}
+catch (Exception $e)
 {
     header("HTTP/1.0 404 Not Found");
     echo "<h1><center>404 Not Found</center></h1>";

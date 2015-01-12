@@ -7,7 +7,8 @@
  */
 
 class GroupModel {
-    public static $_db_name = "`group`";
+    const TABLE = "`group`";
+    const PRIMARY_KEY = "`group_id`";
 
     public $group_id;
     public $group_full_name;
@@ -15,38 +16,7 @@ class GroupModel {
     public $group_okr;
     public $group_type;
     public $group_url;
-	
-	/*public static $replace = array(
-		'b'=>'в',
-		'B'=>'в',
-		'i'=>'і',
-		'I'=>'і',
-		'O'=>'о',
-		'o'=>'о',
-		'C'=>'с',
-		'c'=>'с',
-		'T'=>'т',
-		't'=>'т',
-		'P'=>'р',
-		'p'=>'р',
-		'A'=>'а',
-		'a'=>'а',
-		'Y'=>'у',
-		'y'=>'у',
-		'H'=>'н',
-		'h'=>'н',
-		'K'=>'к',
-		'k'=>'к',
-		'X'=>'х',
-		'x'=>'х',
-		'M'=>'М',
-		'm'=>'м',
-		'p'=>'п',
-		'P'=>'п',
-		'L'=>'л',
-		'l'=>'л',
-	);*/
-	
+
     public static $replace = array(	
         "а"=>"a",
         "б"=>"b",
@@ -82,24 +52,29 @@ class GroupModel {
     {}
 
 
-    public static function  getAll($offset = 0, $limit = 100)
+    /**
+     * @param int $offset
+     * @param int $limit
+     * @return array
+     */
+    public static function getAll($offset = 0, $limit = 100)
     {
         /** @var PDO $db */
         $db = Registry::get('db');
 
         $count = $db->query("
-            SELECT COUNT(*) FROM ".GroupModel::$_db_name." 
+            SELECT COUNT(*) FROM ".GroupModel::TABLE."
         ")->fetchColumn();
 
-        $offset = abs(intval($offset));
-        $limit = abs(intval($limit));
+        $offset = isset($offset) ? abs(intval($offset)) : 0;
+        $limit = isset($limit) ? abs(intval($limit)) : 100;
         if($limit < 1) $limit = 1;
         if($limit > 100) $limit = 100;
 
         $result = array();
 
         $query = $db->query("
-            SELECT * FROM ".GroupModel::$_db_name." LIMIT $offset , $limit
+            SELECT * FROM ".GroupModel::TABLE." LIMIT $offset , $limit
         ");
         while($data = $query->fetch(PDO::FETCH_ASSOC))
         {
@@ -121,25 +96,27 @@ class GroupModel {
 
 
     /**
-     * @param $group_name
-     * @return GroupModel|null
+     * @param string|int $group_name
+     * @return array
+     * @throws ApiException
      */
-    public static function getByName($group_name)
+    public static function getByNameOrId($group_name)
     {
 		$group_name = mb_strtolower($group_name,"UTF-8");
+        $group_name = urldecode($group_name);
 		$group_name = str_replace(array_values(GroupModel::$replace), array_keys(GroupModel::$replace), $group_name);
 	
         /** @var PDO $db */
         $db = Registry::get('db');
         $count = $db->query("
-            SELECT COUNT(*) FROM ".GroupModel::$_db_name."
+            SELECT COUNT(*) FROM ".GroupModel::TABLE."
                 WHERE group_full_name = ".$db->quote($group_name)." OR group_id = ".$db->quote($group_name)."
         ")->fetchColumn();
 
         if($count > 0)
         {
             $query = $db->query("
-                SELECT * FROM ".GroupModel::$_db_name."
+                SELECT * FROM ".GroupModel::TABLE."
                     WHERE group_full_name = ".$db->quote($group_name)." OR group_id = ".$db->quote($group_name)."
             ");
             $data =  $query->fetch(PDO::FETCH_ASSOC);
@@ -154,13 +131,14 @@ class GroupModel {
         }
         else
         {
-            throw new Exception("404 - Not found");
+            throw new ApiException("Group not found");
         }
     }
 
     /**
-     * @param $group_name
-     * @return GroupModel[]|array
+     * @param string $group_name
+     * @return array
+     * @throws ApiException
      */
     public static function searchByName($group_name)
     {
@@ -168,7 +146,7 @@ class GroupModel {
 		
 		if(empty($group_name))
 		{
-			throw new Exception("404 - Not found");
+			throw new ApiException("Group not found");
 		}
 		
 		$group_name = mb_strtolower($group_name,"UTF-8");
@@ -177,7 +155,7 @@ class GroupModel {
         /** @var PDO $db */
         $db = Registry::get('db');
         $count = $db->query("
-            SELECT COUNT(*) FROM ".GroupModel::$_db_name."
+            SELECT COUNT(*) FROM ".GroupModel::TABLE."
                 WHERE group_full_name LIKE ".$db->quote($group_name."%")."
         ")->fetchColumn();
 
@@ -185,7 +163,7 @@ class GroupModel {
         if($count > 0)
         {
             $query = $db->query("
-                SELECT * FROM ".GroupModel::$_db_name."
+                SELECT * FROM ".GroupModel::TABLE."
                     WHERE group_full_name LIKE ".$db->quote($group_name."%")."
             ");
             while($data = $query->fetch(PDO::FETCH_ASSOC))
@@ -202,8 +180,39 @@ class GroupModel {
         }
         else
         {
-            throw new Exception("404 - Not found");
+            throw new ApiException("Group not found");
         }
+
+        return $result;
+    }
+
+    /**
+     * @param string $query
+     * @return array
+     * @throws ApiException
+     */
+    public static function searchByQuery($query)
+    {
+        $result = array();
+
+        /** @var PDO $db */
+        $db = Registry::get('db');
+
+        $query = $db->query($query);
+        while($data = $query->fetch(PDO::FETCH_ASSOC))
+        {
+            $groupModel = new GroupModel();
+            $groupModel->group_full_name = $data["group_full_name"];
+            $groupModel->group_id = $data["group_id"];
+            $groupModel->group_prefix = $data["group_prefix"];
+            $groupModel->group_okr = $data["group_okr"];
+            $groupModel->group_url = $data["group_url"];
+            $groupModel->group_type = $data["group_type"];
+            $result[] = $groupModel->toArray();
+        }
+
+        if(!count($result))
+            throw new ApiException("Groups not found");
 
         return $result;
     }
@@ -211,7 +220,7 @@ class GroupModel {
     public function toArray()
     {
         return array(
-            "group_id" => $this->group_id,
+            "group_id" => abs(intval($this->group_id)),
             "group_full_name" => $this->group_full_name,
             "group_prefix" => $this->group_prefix,
             "group_okr" => $this->group_okr,

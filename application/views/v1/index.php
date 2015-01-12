@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>API расписания КПИ</title>
-    <link rel="stylesheet" href="<?=HOME?>/assets/css/style.css"/>
+    <link rel="stylesheet" href="<?=HOME?>/assets/css/style-old.css"/>
     <link rel="stylesheet" href="<?=HOME?>/assets/css/simplegrid.css"/>
     <link href='http://fonts.googleapis.com/css?family=Roboto&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<link rel="shortcut icon" href="<?=HOME?>/assets/images/favicon.png">

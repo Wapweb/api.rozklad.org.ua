@@ -2,14 +2,17 @@
 /**
  * Created by PhpStorm.
  * User: Шаповал
- * Date: 14.09.14
- * Time: 13:08
+ * Date: 11.01.2015
+ * Time: 22:59
  */
 
-abstract class BaseApiController  {
+abstract class BaseApiV2Controller  {
     const CACHE_DIR = "cache";
 
     protected $data = array();
+    protected $message = 'Ok';
+    protected $meta;
+    protected $debugInfo = null;
 
     /** @var  FrontApiController $_fc */
     protected $_fc;
@@ -21,20 +24,29 @@ abstract class BaseApiController  {
 
     protected function send($status = 200, $isCache = Cache::CanCache)
     {
-        header("HTTP/1.1 " . $status . " " . $this->requestStatus($status));
+        header("HTTP/1.1 " . $status . " " . self::requestStatus($status));
         header('Content-Type: application/json; charset=utf-8');
         header('Access-Control-Allow-Origin: *');
         header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
+        $response = [];
+        $response['statusCode'] = $status;
+        $response['timeStamp'] = time();
+        $response['message'] = $this->message;
+        $response['debugInfo'] = $this->debugInfo;
+        $response['meta'] = $this->meta;
+        $response['data'] = $this->data;
 
         if($isCache == Cache::CanCache)
-            $this->saveData();
+            $this->saveData($response);
 
-        return json_encode($this->data,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+
+        return json_encode($response,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
     }
 
-    private function requestStatus($code) {
+    public static function requestStatus($code) {
         $status = array(
             200 => 'OK',
+            400 => 'Bad Request',
             404 => 'Not Found',
             405 => 'Method Not Allowed',
             500 => 'Internal Server Error',
@@ -42,12 +54,12 @@ abstract class BaseApiController  {
         return ($status[$code])?$status[$code]:$status[500];
     }
 
-    private function saveData()
+    private function saveData($data)
     {
         $fileName = md5($this->_fc->getQuery()).".cache";
         if(!file_exists(ROOT.DIRECTORY_SEPARATOR.self::CACHE_DIR.DIRECTORY_SEPARATOR.$fileName))
         {
-            $data = serialize($this->data);
+            $data = serialize($data);
             file_put_contents(ROOT.DIRECTORY_SEPARATOR.self::CACHE_DIR.DIRECTORY_SEPARATOR.$fileName,$data);
         }
     }
@@ -63,4 +75,4 @@ abstract class BaseApiController  {
         return null;
     }
 
-}
+} 

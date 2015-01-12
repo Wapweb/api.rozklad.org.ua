@@ -1,0 +1,29 @@
+{
+    "statusCode": 200,
+    "timeStamp": 1421086754,
+    "message": "Ok",
+    "debugInfo": null,
+    "meta": {
+        "total_count": "1860",
+        "offset": 5,
+        "limit": 2
+    },
+    "data": [
+        {
+            "group_id": 6,
+            "group_full_name": "ам-32",
+            "group_prefix": "ам",
+            "group_okr": "bachelor",
+            "group_type": "daily",
+            "group_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?g=35f7c5e8-e70c-439e-9934-72fe5ceb3502"
+        },
+        {
+            "group_id": 7,
+            "group_full_name": "ам-32м",
+            "group_prefix": "ам",
+            "group_okr": "magister",
+            "group_type": "daily",
+            "group_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?g=4a9d67c1-29d1-4224-b5fe-b1ca9c77ff95"
+        }
+    ]
+}

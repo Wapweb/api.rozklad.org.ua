@@ -1,0 +1,387 @@
+{
+    "statusCode": 200,
+    "timeStamp": 1421094819,
+    "message": "Ok",
+    "debugInfo": null,
+    "meta": null,
+    "data": [
+        {
+            "lesson_id": "16329",
+            "group_id": "792",
+            "day_number": "1",
+            "day_name": "Понеділок",
+            "lesson_name": "Сучасні інформаційні технології",
+            "lesson_number": "2",
+            "lesson_room": "623-07",
+            "lesson_type": "Лек",
+            "teacher_name": "зав.каф. Теленик С. Ф.",
+            "lesson_week": "1",
+            "time_start": "10:25:00",
+            "time_end": "12:00:00",
+            "rate": "1",
+            "teachers": [
+
+            ]
+        },
+        {
+            "lesson_id": "15544",
+            "group_id": "758",
+            "day_number": "1",
+            "day_name": "Понеділок",
+            "lesson_name": "Сучасні інформаційні технології",
+            "lesson_number": "2",
+            "lesson_room": "623-07",
+            "lesson_type": "Лек",
+            "teacher_name": "зав.каф. Теленик С. Ф.",
+            "lesson_week": "1",
+            "time_start": "10:25:00",
+            "time_end": "12:00:00",
+            "rate": "1",
+            "teachers": [
+
+            ]
+        },
+        {
+            "lesson_id": "14354",
+            "group_id": "697",
+            "day_number": "1",
+            "day_name": "Понеділок",
+            "lesson_name": "Іноземна мова",
+            "lesson_number": "2",
+            "lesson_room": "412-19",
+            "lesson_type": "Прак",
+            "teacher_name": "вик. Вороніна Г. Р.",
+            "lesson_week": "1",
+            "time_start": "10:25:00",
+            "time_end": "12:00:00",
+            "rate": "1",
+            "teachers": [
+
+            ]
+        },
+        {
+            "lesson_id": "14379",
+            "group_id": "698",
+            "day_number": "1",
+            "day_name": "Понеділок",
+            "lesson_name": "Сучасні інформаційні технології",
+            "lesson_number": "2",
+            "lesson_room": "623-07",
+            "lesson_type": "Лек",
+            "teacher_name": "зав.каф. Теленик С. Ф.",
+            "lesson_week": "1",
+            "time_start": "10:25:00",
+            "time_end": "12:00:00",
+            "rate": "1",
+            "teachers": [
+
+            ]
+        },
+        {
+            "lesson_id": "14539",
+            "group_id": "703",
+            "day_number": "1",
+            "day_name": "Понеділок",
+            "lesson_name": "Сучасні інформаційні технології",
+            "lesson_number": "2",
+            "lesson_room": "623-07",
+            "lesson_type": "Лек",
+            "teacher_name": "зав.каф. Теленик С. Ф.",
+            "lesson_week": "1",
+            "time_start": "10:25:00",
+            "time_end": "12:00:00",
+            "rate": "1",
+            "teachers": [
+
+            ]
+        },
+        {
+            "lesson_id": "9151",
+            "group_id": "466",
+            "day_number": "2",
+            "day_name": "Вівторок",
+            "lesson_name": "Дискр. матем.",
+            "lesson_number": "3",
+            "lesson_room": "209а-18",
+            "lesson_type": "Лек",
+            "teacher_name": "зав.каф. Теленик С. Ф.",
+            "lesson_week": "1",
+            "time_start": "12:20:00",
+            "time_end": "13:55:00",
+            "rate": "1",
+            "teachers": [
+
+            ]
+        },
+        {
+            "lesson_id": "9182",
+            "group_id": "467",
+            "day_number": "2",
+            "day_name": "Вівторок",
+            "lesson_name": "ТШІУ-1",
+            "lesson_number": "3",
+            "lesson_room": "309-18,5",
+            "lesson_type": "1",
+            "teacher_name": "ас. Тимофєєва Ю. С.",
+            "lesson_week": "1",
+            "time_start": "12:20:00",
+            "time_end": "13:55:00",
+            "rate": "1",
+            "teachers": [
+
+            ]
+        },
+        {
+            "lesson_id": "9210",
+            "group_id": "468",
+            "day_number": "2",
+            "day_name": "Вівторок",
+            "lesson_name": "Дискр. матем.",
+            "lesson_number": "3",
+            "lesson_room": "209а-18",
+            "lesson_type": "Лек",
+            "teacher_name": "зав.каф. Теленик С. Ф.",
+            "lesson_week": "1",
+            "time_start": "12:20:00",
+            "time_end": "13:55:00",
+            "rate": "1",
+            "teachers": [
+
+            ]
+        },
+        {
+            "lesson_id": "9245",
+            "group_id": "469",
+            "day_number": "2",
+            "day_name": "Вівторок",
+            "lesson_name": "ОСК-1",
+            "lesson_number": "3",
+            "lesson_room": "311-18",
+            "lesson_type": "Прак",
+            "teacher_name": "ст.вик. Писаренко А. В.",
+            "lesson_week": "1",
+            "time_start": "12:20:00",
+            "time_end": "13:55:00",
+            "rate": "1",
+            "teachers": [
+
+            ]
+        },
+        {
+            "lesson_id": "9049",
+            "group_id": "462",
+            "day_number": "3",
+            "day_name": "Середа",
+            "lesson_name": "Мат. методи опт.",
+            "lesson_number": "2",
+            "lesson_room": "527-18",
+            "lesson_type": "Лек",
+            "teacher_name": "зав.каф. Теленик С. Ф.",
+            "lesson_week": "1",
+            "time_start": "10:25:00",
+            "time_end": "12:00:00",
+            "rate": "1",
+            "teachers": [
+
+            ]
+        },
+        {
+            "lesson_id": "14396",
+            "group_id": "698",
+            "day_number": "1",
+            "day_name": "Понеділок",
+            "lesson_name": "Сучасні інформаційні технології",
+            "lesson_number": "2",
+            "lesson_room": "623-07",
+            "lesson_type": "Лек",
+            "teacher_name": "зав.каф. Теленик С. Ф.",
+            "lesson_week": "2",
+            "time_start": "10:25:00",
+            "time_end": "12:00:00",
+            "rate": "1",
+            "teachers": [
+
+            ]
+        },
+        {
+            "lesson_id": "14555",
+            "group_id": "703",
+            "day_number": "1",
+            "day_name": "Понеділок",
+            "lesson_name": "Сучасні інформаційні технології",
+            "lesson_number": "2",
+            "lesson_room": "623-07",
+            "lesson_type": "Лек",
+            "teacher_name": "зав.каф. Теленик С. Ф.",
+            "lesson_week": "2",
+            "time_start": "10:25:00",
+            "time_end": "12:00:00",
+            "rate": "1",
+            "teachers": [
+
+            ]
+        },
+        {
+            "lesson_id": "16344",
+            "group_id": "792",
+            "day_number": "1",
+            "day_name": "Понеділок",
+            "lesson_name": "Сучасні інформаційні технології",
+            "lesson_number": "2",
+            "lesson_room": "623-07",
+            "lesson_type": "Лек",
+            "teacher_name": "зав.каф. Теленик С. Ф.",
+            "lesson_week": "2",
+            "time_start": "10:25:00",
+            "time_end": "12:00:00",
+            "rate": "1",
+            "teachers": [
+
+            ]
+        },
+        {
+            "lesson_id": "15560",
+            "group_id": "758",
+            "day_number": "1",
+            "day_name": "Понеділок",
+            "lesson_name": "Сучасні інформаційні технології",
+            "lesson_number": "2",
+            "lesson_room": "623-07",
+            "lesson_type": "Лек",
+            "teacher_name": "зав.каф. Теленик С. Ф.",
+            "lesson_week": "2",
+            "time_start": "10:25:00",
+            "time_end": "12:00:00",
+            "rate": "1",
+            "teachers": [
+
+            ]
+        },
+        {
+            "lesson_id": "14365",
+            "group_id": "697",
+            "day_number": "1",
+            "day_name": "Понеділок",
+            "lesson_name": "Іноземна мова",
+            "lesson_number": "2",
+            "lesson_room": "412-19",
+            "lesson_type": "Прак",
+            "teacher_name": "вик. Вороніна Г. Р.",
+            "lesson_week": "2",
+            "time_start": "10:25:00",
+            "time_end": "12:00:00",
+            "rate": "1",
+            "teachers": [
+
+            ]
+        },
+        {
+            "lesson_id": "9169",
+            "group_id": "466",
+            "day_number": "2",
+            "day_name": "Вівторок",
+            "lesson_name": "Дискр. матем.",
+            "lesson_number": "3",
+            "lesson_room": "209а-18",
+            "lesson_type": "Лек",
+            "teacher_name": "зав.каф. Теленик С. Ф.",
+            "lesson_week": "2",
+            "time_start": "12:20:00",
+            "time_end": "13:55:00",
+            "rate": "1",
+            "teachers": [
+
+            ]
+        },
+        {
+            "lesson_id": "9196",
+            "group_id": "467",
+            "day_number": "2",
+            "day_name": "Вівторок",
+            "lesson_name": "ТШІУ-1",
+            "lesson_number": "3",
+            "lesson_room": "309-18,5",
+            "lesson_type": "1",
+            "teacher_name": "ас. Тимофєєва Ю. С.",
+            "lesson_week": "2",
+            "time_start": "12:20:00",
+            "time_end": "13:55:00",
+            "rate": "1",
+            "teachers": [
+
+            ]
+        },
+        {
+            "lesson_id": "9226",
+            "group_id": "468",
+            "day_number": "2",
+            "day_name": "Вівторок",
+            "lesson_name": "Дискр. матем.",
+            "lesson_number": "3",
+            "lesson_room": "209а-18",
+            "lesson_type": "Лек",
+            "teacher_name": "зав.каф. Теленик С. Ф.",
+            "lesson_week": "2",
+            "time_start": "12:20:00",
+            "time_end": "13:55:00",
+            "rate": "1",
+            "teachers": [
+
+            ]
+        },
+        {
+            "lesson_id": "9260",
+            "group_id": "469",
+            "day_number": "2",
+            "day_name": "Вівторок",
+            "lesson_name": "ОСК-1",
+            "lesson_number": "3",
+            "lesson_room": "534-18",
+            "lesson_type": "Лаб",
+            "teacher_name": "ст.вик. Писаренко А. В.",
+            "lesson_week": "2",
+            "time_start": "12:20:00",
+            "time_end": "13:55:00",
+            "rate": "1",
+            "teachers": [
+
+            ]
+        },
+        {
+            "lesson_id": "9067",
+            "group_id": "462",
+            "day_number": "2",
+            "day_name": "Вівторок",
+            "lesson_name": "Мат. методи опт.",
+            "lesson_number": "4",
+            "lesson_room": "527-18",
+            "lesson_type": "Прак",
+            "teacher_name": "зав.каф. Теленик С. Ф.",
+            "lesson_week": "2",
+            "time_start": "14:15:00",
+            "time_end": "15:50:00",
+            "rate": "1",
+            "teachers": [
+
+            ]
+        },
+        {
+            "lesson_id": "9061",
+            "group_id": "462",
+            "day_number": "3",
+            "day_name": "Середа",
+            "lesson_name": "Мат. методи опт.",
+            "lesson_number": "2",
+            "lesson_room": "527-18",
+            "lesson_type": "Лек",
+            "teacher_name": "зав.каф. Теленик С. Ф.",
+            "lesson_week": "2",
+            "time_start": "10:25:00",
+            "time_end": "12:00:00",
+            "rate": "1",
+            "teachers": [
+
+            ]
+        }
+    ]
+}

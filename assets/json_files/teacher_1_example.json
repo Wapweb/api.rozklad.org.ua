@@ -1,0 +1,23 @@
+{
+    "statusCode": 200,
+    "timeStamp": 1421094078,
+    "message": "Ok",
+    "debugInfo": null,
+    "meta": {
+        "total_count": "3969",
+        "offset": 1000,
+        "limit": 2
+    },
+    "data": [
+        {
+            "teacher_id": "1001",
+            "teacher_name": "Дубровська Вікторія Василівна",
+            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=3fb04844-5ec8-4c0a-926b-cd17814dc7b8"
+        },
+        {
+            "teacher_id": "1002",
+            "teacher_name": "Дубчак Євген Михайлович",
+            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=6a24e206-4333-4b32-9a1e-eb38e78b78cf"
+        }
+    ]
+}
