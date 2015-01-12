@@ -8,7 +8,9 @@
  * Copyright 2013, Daniel Stocks
  * Released under the MIT, BSD, and GPL Licenses.
  */
+
 (function($, exports) {
+
   // Constructor
   function Collapse (el, options) {
     options = options || {};
