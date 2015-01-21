@@ -28,7 +28,7 @@
     <div class="scroll">
         <ul class="items-inline">
             <li style="width: 25%;" ><a href="<?=HOME?>">Описание</a></li>
-            <li style="width: 25%;" class="items-inline-active"><a href="<?=HOME?>/doc_groups" >Группы</a></li>
+            <li style="width: 25%;" class="items-inline-active"><a href="<?=HOME?>/v2/doc_groups" >Группы</a></li>
             <li style="width: 25%;" ><a href="<?=HOME?>/v2/doc_teachers">Преподаватели</a></li>
             <li style="width: 25%;"><a href="<?=HOME?>/v2/doc_other">Другое</a></li>
         </ul>
