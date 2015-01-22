@@ -25,4 +25,21 @@ class Utilities {
             }
         }
     }
+
+    public static function hideModelPropertiesFilter($filter_name,array $toArray)
+    {
+        $hideFilter = Registry::get($filter_name);
+
+        if($hideFilter != null)
+        {
+            foreach($hideFilter as $key=>$value)
+            {
+                if(isset($toArray[$key]))
+                    unset($toArray[$key]);
+            }
+        }
+
+        return $toArray;
+    }
+
 } 

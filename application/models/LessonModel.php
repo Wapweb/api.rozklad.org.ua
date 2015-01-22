@@ -90,6 +90,10 @@ class LessonModel extends Model {
     {
         $result = array();
 
+        //hide some properties
+        $hideFilter = array('group_id'=>true);
+        Registry::set('LessonModelHideFilter',$hideFilter);
+
         $teacher_name = urldecode(trim($teacher_name));
 
         /** @var PDO $db */
@@ -113,9 +117,12 @@ class LessonModel extends Model {
         if($count > 0)
         {
             $query = $db->query("
-               SELECT * FROM ".LessonModel::TABLE." AS t1
-                JOIN ".TeacherModel::RELATION_TABLE." as t2 USING(".LessonModel::PRIMARY_KEY.")
-                    WHERE t2.".TeacherModel::PRIMARY_KEY." = '".abs(intval($teacher_id))."' $cond ORDER BY t1.lesson_week,t1.day_number ASC
+               SELECT *
+                   FROM ".LessonModel::TABLE." AS t1
+                    JOIN ".TeacherModel::RELATION_TABLE." as t2 USING(".LessonModel::PRIMARY_KEY.")
+                        WHERE t2.".TeacherModel::PRIMARY_KEY." = '".abs(intval($teacher_id))."' $cond
+                            GROUP BY t1.day_number,t1.lesson_number,t1.lesson_week
+                                ORDER BY t1.lesson_week,t1.day_number,t1.lesson_number ASC
             ");
             while($data = $query->fetch(PDO::FETCH_ASSOC))
             {
@@ -124,7 +131,27 @@ class LessonModel extends Model {
                 //$lessonModel->teachers = TeacherModel::getAllByLessonId($lessonModel->lesson_id);
                 //load rooms
                 $lessonModel->rooms = RoomModel::getAllByLessonId($lessonModel->lesson_id);
-                $result[] = $lessonModel->toArray();
+
+                //load groups
+                $q = $db->query("
+                    SELECT t1.* FROM ".GroupModel::TABLE." as t1
+                        JOIN ".LessonModel::TABLE." as t2 USING(".GroupModel::PRIMARY_KEY.")
+                            WHERE t2.day_number = '".$lessonModel->day_number."'
+                            AND t2.lesson_number = '".$lessonModel->lesson_number."'
+                            AND t2.teacher_name = ".$db->quote($lessonModel->teacher_name)."
+                            AND t2.lesson_week = '".$lessonModel->lesson_week."'
+                ");
+                $groupsRes = array();
+                while($groupsData = $q->fetch(PDO::FETCH_ASSOC))
+                {
+                    $group = new GroupModel();
+                    $group->unpack($groupsData);
+                    $groupsRes[] = $group->toArray();
+                }
+                $m = $lessonModel->toArray();
+                $m["groups"] = $groupsRes;
+
+                $result[] = $m;
             }
         }
         else
@@ -137,7 +164,7 @@ class LessonModel extends Model {
 	
 	public function toArray()
     {
-        return array(
+        $toArray = array(
             "lesson_id" => $this->lesson_id,
             "group_id" => $this->group_id,
             "day_number" => $this->day_number,
@@ -145,19 +172,20 @@ class LessonModel extends Model {
             "lesson_name" => $this->lesson_name,
             "lesson_full_name"=>$this->lesson_full_name,
             "lesson_number" => $this->lesson_number,
-			"lesson_room" => $this->lesson_room,
-			"lesson_type" => $this->lesson_type,
-			"teacher_name" => $this->teacher_name,
-			"lesson_week" => $this->lesson_week,
-			"time_start" => $this->time_start,
-			"time_end" => $this->time_end,
-			"rate" => $this->rate,
+            "lesson_room" => $this->lesson_room,
+            "lesson_type" => $this->lesson_type,
+            "teacher_name" => $this->teacher_name,
+            "lesson_week" => $this->lesson_week,
+            "time_start" => $this->time_start,
+            "time_end" => $this->time_end,
+            "rate" => $this->rate,
             "teachers" => $this->teachers,
             "rooms"=>$this->rooms
         );
+        return Utilities::hideModelPropertiesFilter('LessonModelHideFilter',$toArray);
     }
 
-    protected function unpack($data)
+    public function unpack($data)
     {
         $this->lesson_id = $data["lesson_id"];
         $this->group_id = $data["group_id"];

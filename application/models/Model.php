@@ -7,5 +7,5 @@
  */
 
 abstract class Model {
-    protected  abstract function unpack($data);
+    public  abstract function unpack($data);
 } 

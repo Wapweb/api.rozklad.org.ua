@@ -205,7 +205,7 @@ class GroupModel extends Model {
         );
     }
 
-    protected function unpack($data)
+    public function unpack($data)
     {
         $this->group_full_name = $data["group_full_name"];
         $this->group_id = $data["group_id"];

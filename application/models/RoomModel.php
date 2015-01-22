@@ -60,7 +60,7 @@ class RoomModel extends Model {
      * unpack array data to Model's properties
      * @param $data
      */
-    protected function unpack($data)
+    public function unpack($data)
     {
         $this->room_id = $data["room_id"];
         $this->room_name = $data["room_name"];

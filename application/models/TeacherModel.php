@@ -234,7 +234,7 @@ class TeacherModel extends Model {
         );
     }
 
-    protected  function unpack($data)
+    public  function unpack($data)
     {
         $this->teacher_id = $data["teacher_id"];
         $this->teacher_name = $data["teacher_name"];
