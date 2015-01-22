@@ -6,7 +6,7 @@
  * Time: 14:29
  */
 
-class LessonModel {
+class LessonModel extends Model {
     const TABLE = "`lesson`";
     const RELATION_TABLE = "`teacher_lesson`";
     const PRIMARY_KEY = "`lesson_id`";
@@ -17,6 +17,7 @@ class LessonModel {
     public $day_name;
     public $lesson_number;
     public $lesson_name;
+    public $lesson_full_name;
     public $lesson_room;
     public $lesson_type;
     public $teacher_name;
@@ -24,12 +25,10 @@ class LessonModel {
     public $time_start;
     public $time_end;
     public $rate;
+
     public $teachers = array();
+    public $rooms = array();
 
-    public function __construct()
-    {
-
-    }
     /**
      * @param string|int $group_name
      * @param string $cond
@@ -52,11 +51,6 @@ class LessonModel {
             SELECT COUNT(*) FROM ".LessonModel::TABLE."
                 WHERE (group_id = '$group_id' OR group_id = ".$db->quote($group_name).") $cond
         ")->fetchColumn();
-		
-		$query = "
-            SELECT COUNT(*) FROM ".LessonModel::TABLE."
-                WHERE (group_id = '$group_id' OR group_id = ".$db->quote($group_name).") $cond
-        ";
 
         $result = array();
         if($count > 0)
@@ -68,22 +62,13 @@ class LessonModel {
             while($data = $query->fetch(PDO::FETCH_ASSOC))
             {
                 $lessonModel = new LessonModel();
-                $lessonModel->lesson_id = $data["lesson_id"];
-                $lessonModel->group_id = $data["group_id"];
-                $lessonModel->day_number = $data["day_number"];
-                $lessonModel->day_name = $data["day_name"];
-                $lessonModel->lesson_name = $data["lesson_name"];
-                $lessonModel->lesson_number = $data["lesson_number"];
-                $lessonModel->lesson_room = $data["lesson_room"];
-                $lessonModel->lesson_type = $data["lesson_type"];
-                $lessonModel->teacher_name = $data["teacher_name"];
-                $lessonModel->lesson_week = $data["lesson_week"];
-                $lessonModel->time_start = $data["time_start"];
-                $lessonModel->time_end = $data["time_end"];
-                $lessonModel->rate = $data["rate"];
+                $lessonModel->unpack($data);
                 $lessonModel->teachers = TeacherModel::getAllByLessonId($lessonModel->lesson_id);
                 //enable duplicate filter
                 $lessonModel->teachers = TeacherModel::teachersDuplicateFilter($lessonModel->teachers);
+                //load rooms
+                $lessonModel->rooms = RoomModel::getAllByLessonId($lessonModel->lesson_id);
+
                 $result[] = $lessonModel->toArray();
             }
         }
@@ -135,20 +120,10 @@ class LessonModel {
             while($data = $query->fetch(PDO::FETCH_ASSOC))
             {
                 $lessonModel = new LessonModel();
-                $lessonModel->lesson_id = $data["lesson_id"];
-                $lessonModel->group_id = $data["group_id"];
-                $lessonModel->day_number = $data["day_number"];
-                $lessonModel->day_name = $data["day_name"];
-                $lessonModel->lesson_name = $data["lesson_name"];
-                $lessonModel->lesson_number = $data["lesson_number"];
-                $lessonModel->lesson_room = $data["lesson_room"];
-                $lessonModel->lesson_type = $data["lesson_type"];
-                $lessonModel->teacher_name = $data["teacher_name"];
-                $lessonModel->lesson_week = $data["lesson_week"];
-                $lessonModel->time_start = $data["time_start"];
-                $lessonModel->time_end = $data["time_end"];
-                $lessonModel->rate = $data["rate"];
+                $lessonModel->unpack($data);
                 //$lessonModel->teachers = TeacherModel::getAllByLessonId($lessonModel->lesson_id);
+                //load rooms
+                $lessonModel->rooms = RoomModel::getAllByLessonId($lessonModel->lesson_id);
                 $result[] = $lessonModel->toArray();
             }
         }
@@ -168,6 +143,7 @@ class LessonModel {
             "day_number" => $this->day_number,
             "day_name" => $this->day_name,
             "lesson_name" => $this->lesson_name,
+            "lesson_full_name"=>$this->lesson_full_name,
             "lesson_number" => $this->lesson_number,
 			"lesson_room" => $this->lesson_room,
 			"lesson_type" => $this->lesson_type,
@@ -176,7 +152,26 @@ class LessonModel {
 			"time_start" => $this->time_start,
 			"time_end" => $this->time_end,
 			"rate" => $this->rate,
-            "teachers" => $this->teachers
+            "teachers" => $this->teachers,
+            "rooms"=>$this->rooms
         );
+    }
+
+    protected function unpack($data)
+    {
+        $this->lesson_id = $data["lesson_id"];
+        $this->group_id = $data["group_id"];
+        $this->day_number = $data["day_number"];
+        $this->day_name = $data["day_name"];
+        $this->lesson_name = $data["lesson_name"];
+        $this->lesson_full_name = $data["lesson_full_name"];
+        $this->lesson_number = $data["lesson_number"];
+        $this->lesson_room = $data["lesson_room"];
+        $this->lesson_type = $data["lesson_type"];
+        $this->teacher_name = $data["teacher_name"];
+        $this->lesson_week = $data["lesson_week"];
+        $this->time_start = $data["time_start"];
+        $this->time_end = $data["time_end"];
+        $this->rate = $data["rate"];
     }
 } 

@@ -38,15 +38,6 @@ class TimetableModel {
     }
 
     /**
-     * @return int
-     */
-    private function getCurrentWeek()
-    {
-        $week_number = date("W");
-        return $week_number%2 == 0 ? 1 : 2;
-    }
-
-    /**
      * @return array
      */
     public function toArray()

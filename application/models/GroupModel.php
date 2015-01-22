@@ -6,7 +6,7 @@
  * Time: 13:27
  */
 
-class GroupModel {
+class GroupModel extends Model {
     const TABLE = "`group`";
     const PRIMARY_KEY = "`group_id`";
 
@@ -48,10 +48,6 @@ class GroupModel {
         "я"=>"ya",
     );
 
-    public function __construct()
-    {}
-
-
     /**
      * @param int $offset
      * @param int $limit
@@ -79,12 +75,7 @@ class GroupModel {
         while($data = $query->fetch(PDO::FETCH_ASSOC))
         {
             $groupModel = new GroupModel();
-            $groupModel->group_full_name = $data["group_full_name"];
-            $groupModel->group_id = $data["group_id"];
-            $groupModel->group_prefix = $data["group_prefix"];
-            $groupModel->group_okr = $data["group_okr"];
-            $groupModel->group_url = $data["group_url"];
-            $groupModel->group_type = $data["group_type"];
+            $groupModel->unpack($data);
             $result['data'][] = $groupModel->toArray();
         }
         $result['meta']['total_count'] = $count;
@@ -121,12 +112,7 @@ class GroupModel {
             ");
             $data =  $query->fetch(PDO::FETCH_ASSOC);
             $groupModel = new GroupModel();
-            $groupModel->group_full_name = $data["group_full_name"];
-            $groupModel->group_id = $data["group_id"];
-            $groupModel->group_prefix = $data["group_prefix"];
-            $groupModel->group_okr = $data["group_okr"];
-            $groupModel->group_url = $data["group_url"];
-            $groupModel->group_type = $data["group_type"];
+            $groupModel->unpack($data);
             return $groupModel->toArray();
         }
         else
@@ -169,12 +155,7 @@ class GroupModel {
             while($data = $query->fetch(PDO::FETCH_ASSOC))
             {
                 $groupModel = new GroupModel();
-                $groupModel->group_full_name = $data["group_full_name"];
-                $groupModel->group_id = $data["group_id"];
-                $groupModel->group_prefix = $data["group_prefix"];
-                $groupModel->group_okr = $data["group_okr"];
-                $groupModel->group_url = $data["group_url"];
-                $groupModel->group_type = $data["group_type"];
+                $groupModel->unpack($data);
                 $result[] = $groupModel->toArray();
             }
         }
@@ -202,12 +183,7 @@ class GroupModel {
         while($data = $query->fetch(PDO::FETCH_ASSOC))
         {
             $groupModel = new GroupModel();
-            $groupModel->group_full_name = $data["group_full_name"];
-            $groupModel->group_id = $data["group_id"];
-            $groupModel->group_prefix = $data["group_prefix"];
-            $groupModel->group_okr = $data["group_okr"];
-            $groupModel->group_url = $data["group_url"];
-            $groupModel->group_type = $data["group_type"];
+            $groupModel->unpack($data);
             $result[] = $groupModel->toArray();
         }
 
@@ -227,6 +203,16 @@ class GroupModel {
             "group_type" => $this->group_type,
             "group_url" => $this->group_url
         );
+    }
+
+    protected function unpack($data)
+    {
+        $this->group_full_name = $data["group_full_name"];
+        $this->group_id = $data["group_id"];
+        $this->group_prefix = $data["group_prefix"];
+        $this->group_okr = $data["group_okr"];
+        $this->group_url = $data["group_url"];
+        $this->group_type = $data["group_type"];
     }
 
 } 

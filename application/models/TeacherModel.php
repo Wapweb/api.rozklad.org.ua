@@ -6,13 +6,15 @@
  * Time: 2:11
  */
 
-class TeacherModel {
+class TeacherModel extends Model {
     const TABLE = "`teacher`";
     const RELATION_TABLE = "`teacher_lesson`";
     const PRIMARY_KEY = "`teacher_id`";
 
     public $teacher_id;
     public $teacher_name;
+    public $teacher_full_name;
+    public $teacher_short_name;
     public $teacher_url;
 
     /**
@@ -42,9 +44,7 @@ class TeacherModel {
         while($data = $query->fetch(PDO::FETCH_ASSOC))
         {
             $teacherModel = new TeacherModel();
-            $teacherModel->teacher_id = $data['teacher_id'];
-            $teacherModel->teacher_name = $data['teacher_name'];
-            $teacherModel->teacher_url = $data['teacher_url'];
+            $teacherModel->unpack($data);
 
             $result['data'][] = $teacherModel->toArray();
         }
@@ -80,9 +80,7 @@ class TeacherModel {
             ");
             $data =  $query->fetch(PDO::FETCH_ASSOC);
             $teacherModel = new TeacherModel();
-            $teacherModel->teacher_id = $data['teacher_id'];
-            $teacherModel->teacher_name = $data['teacher_name'];
-            $teacherModel->teacher_url = $data['teacher_url'];
+            $teacherModel->unpack($data);
         }
         else
         {
@@ -118,9 +116,7 @@ class TeacherModel {
             while($data = $query->fetch(PDO::FETCH_ASSOC))
             {
                 $teacherModel = new TeacherModel();
-                $teacherModel->teacher_id = $data['teacher_id'];
-                $teacherModel->teacher_name = $data['teacher_name'];
-                $teacherModel->teacher_url = $data['teacher_url'];
+                $teacherModel->unpack($data);
                 $result[] = $teacherModel->toArray();
             }
         }
@@ -166,9 +162,7 @@ class TeacherModel {
             while($data = $query->fetch((PDO::FETCH_ASSOC)))
             {
                 $teacherModel = new TeacherModel();
-                $teacherModel->teacher_id = $data['teacher_id'];
-                $teacherModel->teacher_name = $data['teacher_name'];
-                $teacherModel->teacher_url = $data['teacher_url'];
+                $teacherModel->unpack($data);
                 $result[] = $teacherModel->toArray();
             }
         }
@@ -201,22 +195,11 @@ class TeacherModel {
         while($data = $query->fetch(PDO::FETCH_ASSOC))
         {
             $teacherModel = new TeacherModel();
-            $teacherModel->teacher_id = $data['teacher_id'];
-            $teacherModel->teacher_name = $data['teacher_name'];
-            $teacherModel->teacher_url = $data['teacher_url'];
+            $teacherModel->unpack($data);
             $result[] = $teacherModel->toArray();
         }
 
         return $result;
-    }
-
-    public  function toArray()
-    {
-        return array(
-            'teacher_id' => $this->teacher_id,
-            'teacher_name' => $this->teacher_name,
-            'teacher_url' => $this->teacher_url
-        );
     }
 
     public static function teachersDuplicateFilter(array $teachers)
@@ -238,5 +221,25 @@ class TeacherModel {
         unset($teachers_uniq);
 
         return $teachers_uniq_invert;
+    }
+
+    public  function toArray()
+    {
+        return array(
+            'teacher_id' => $this->teacher_id,
+            'teacher_name' => $this->teacher_name,
+            'teacher_full_name'=>$this->teacher_full_name,
+            'teacher_short_name'=>$this->teacher_short_name,
+            'teacher_url' => $this->teacher_url
+        );
+    }
+
+    protected  function unpack($data)
+    {
+        $this->teacher_id = $data["teacher_id"];
+        $this->teacher_name = $data["teacher_name"];
+        $this->teacher_full_name = $data["teacher_full_name_lesson"];
+        $this->teacher_short_name = $data["teacher_short_name_lesson"];
+        $this->teacher_url = $data["teacher_url"];
     }
 } 
