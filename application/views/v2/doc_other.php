@@ -72,7 +72,7 @@
 <div id="footer">
     <div class="container">
         <ul class="items-horizontal small left" style="margin-top: 20px">
-            <li>&copy; 2014 api.rozklad.org.ua</li>
+            <li>&copy; 2014-2015 api.rozklad.org.ua</li>
         </ul>
         <ul class="items-inline small">
         </ul>

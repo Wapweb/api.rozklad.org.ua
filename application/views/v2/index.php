@@ -44,6 +44,8 @@
 Формат ответа для всех запросов: <strong>json</strong><br>
 Запрос можно делать по двум протоколам: http или https(имеется подтвержденный ssl-сертификат)<br>
 Актуальная версия api: <strong>v2</strong><br>
+Последний апдейт api: <strong>21.02.2015</strong><br>
+Последний апдейт db: <strong>21.02.2015</strong><br>
 <p>
     <strong>Контакты:</strong> admin[собака]rozklad.org.ua
 </p>
@@ -58,8 +60,9 @@
     <a href="<?=HOME?>/v1/"><?=HOME?>/v1</a>
 </p>
 <h3>Пример запроса</h3>
-GET JSON: <a href="<?=HOME?>/v2/groups/?filter={'limit':2,'offset':5}" target="_blank"><?=HOME?>/v2/groups/?filter={'limit':2,'offset':5}</a>
-<br>
+<div class="request">
+    GET JSON: <a href="<?=HOME?>/v2/groups/?filter={'limit':2,'offset':5}" target="_blank"><?=HOME?>/v2/groups/?filter={'limit':2,'offset':5}</a>
+</div>
 <h3>Ответ</h3>
 <p><pre><?=file_get_contents(ROOT."/assets/json_files/group_1_example.json",FILE_USE_INCLUDE_PATH);?></pre></p>
 <h3>Параметры ответа</h3>
@@ -112,7 +115,7 @@ GET JSON: <a href="<?=HOME?>/v2/groups/?filter={'limit':2,'offset':5}" target="_
 <div id="footer">
     <div class="container">
         <ul class="items-horizontal small left" style="margin-top: 20px">
-            <li>&copy; 2014 api.rozklad.org.ua</li>
+            <li>&copy; 2014-2015 api.rozklad.org.ua</li>
         </ul>
         <ul class="items-inline small">
         </ul>

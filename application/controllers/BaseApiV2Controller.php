@@ -26,6 +26,8 @@ abstract class BaseApiV2Controller  {
     {
         header("HTTP/1.1 " . $status . " " . self::requestStatus($status));
         header('Content-Type: application/json; charset=utf-8');
+        header('Access-Control-Allow-Credentials: true');
+        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
         header('Access-Control-Allow-Origin: *');
         header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
         $response = [];
@@ -36,8 +38,8 @@ abstract class BaseApiV2Controller  {
         $response['meta'] = $this->meta;
         $response['data'] = $this->data;
 
-        if($isCache == Cache::CanCache)
-            $this->saveData($response);
+        //if($isCache == Cache::CanCache)
+           // $this->saveData($response);
 
 
         return json_encode($response,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
@@ -50,6 +52,7 @@ abstract class BaseApiV2Controller  {
             404 => 'Not Found',
             405 => 'Method Not Allowed',
             500 => 'Internal Server Error',
+            201 => 'Created'
         );
         return ($status[$code])?$status[$code]:$status[500];
     }

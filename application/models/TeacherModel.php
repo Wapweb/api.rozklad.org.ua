@@ -11,11 +11,15 @@ class TeacherModel extends Model {
     const RELATION_TABLE = "`teacher_lesson`";
     const PRIMARY_KEY = "`teacher_id`";
 
+    protected  static $_tableName = "teacher";
+    protected static $_primaryKey = "teacher_id";
+
     public $teacher_id;
     public $teacher_name;
     public $teacher_full_name;
     public $teacher_short_name;
     public $teacher_url;
+    public $teacher_rating;
 
     /**
      * @param int $offset
@@ -60,7 +64,7 @@ class TeacherModel extends Model {
      * @return array
      * @throws ApiException
      */
-    public static function getByNameOrId($teacher_name)
+    public static function getByNameOrId($teacher_name,$return_obj=false)
     {
         $teacher_name = mb_strtolower($teacher_name,"UTF-8");
         $teacher_name = urldecode($teacher_name);
@@ -69,14 +73,20 @@ class TeacherModel extends Model {
         $db = Registry::get('db');
         $count = $db->query("
             SELECT COUNT(*) FROM ".TeacherModel::TABLE."
-                WHERE teacher_name = ".$db->quote($teacher_name)." OR teacher_id = ".$db->quote($teacher_name)."
+                WHERE teacher_name = ".$db->quote($teacher_name)."
+                    OR teacher_full_name_lesson = ".$db->quote($teacher_name)."
+                        OR teacher_id = ".$db->quote($teacher_name)."
+                            OR teacher_short_name_lesson = ".$db->quote($teacher_name)."
         ")->fetchColumn();
 
         if($count > 0)
         {
             $query = $db->query("
                 SELECT * FROM ".TeacherModel::TABLE."
-                    WHERE teacher_name = ".$db->quote($teacher_name)." OR teacher_id = ".$db->quote($teacher_name)."
+                    WHERE teacher_name = ".$db->quote($teacher_name)."
+                        OR teacher_full_name_lesson = ".$db->quote($teacher_name)."
+                            OR teacher_id = ".$db->quote($teacher_name)."
+                                OR teacher_short_name_lesson = ".$db->quote($teacher_name)." LIMIT 1
             ");
             $data =  $query->fetch(PDO::FETCH_ASSOC);
             $teacherModel = new TeacherModel();
@@ -87,7 +97,7 @@ class TeacherModel extends Model {
             throw new ApiException("Teacher not found");
         }
 
-        return $teacherModel->toArray();
+        return $return_obj ? $teacherModel : $teacherModel->toArray();
     }
 
     /**
@@ -171,7 +181,7 @@ class TeacherModel extends Model {
             throw new ApiException("Teachers not found: undefined group");
         }
 
-        $res = self::teachersDuplicateFilter($result);
+        //$res = self::teachersDuplicateFilter($result);
         return $result;
     }
 
@@ -223,6 +233,15 @@ class TeacherModel extends Model {
         return $teachers_uniq_invert;
     }
 
+    public function updateRating(TeacherVoteModel $newVote)
+    {
+        //countOfVotes include newVote
+        $countOfVotes = TeacherVoteModel::getVotesCountFromTeacher($this);
+        $newRating = (($countOfVotes-1)*$this->teacher_rating + $newVote->ratingMarkAvg)/($countOfVotes);
+
+        $this->teacher_rating = round($newRating,3);
+    }
+
     public  function toArray()
     {
         return array(
@@ -230,16 +249,32 @@ class TeacherModel extends Model {
             'teacher_name' => $this->teacher_name,
             'teacher_full_name'=>$this->teacher_full_name,
             'teacher_short_name'=>$this->teacher_short_name,
-            'teacher_url' => $this->teacher_url
+            'teacher_url' => $this->teacher_url,
+            'teacher_rating'=>$this->teacher_rating
         );
     }
 
     public  function unpack($data)
     {
+        $this->setId($data["teacher_id"]);
         $this->teacher_id = $data["teacher_id"];
         $this->teacher_name = $data["teacher_name"];
         $this->teacher_full_name = $data["teacher_full_name_lesson"];
         $this->teacher_short_name = $data["teacher_short_name_lesson"];
         $this->teacher_url = $data["teacher_url"];
+        $this->teacher_rating = $data["teacher_rating"];
+    }
+
+    public function pack()
+    {
+        $data = array();
+        $data["teacher_id"] = $this->teacher_id;
+        $data["teacher_name"] = $this->teacher_name;
+        $data["teacher_full_name_lesson"] = $this->teacher_full_name;
+        $data["teacher_short_name_lesson"] = $this->teacher_short_name;
+        $data["teacher_url"] = $this->teacher_url;
+        $data["teacher_rating"] = $this->teacher_rating;
+
+        return $data;
     }
 } 

@@ -148,7 +148,128 @@ class V2ApiController extends BaseApiV2Controller {
         return $this->send(200);
     }
 
+    /**
+     * url GET /v2/teachers/{teacher_name|teacher_id}/canvote
+     * @api
+     * @param array $data
+     * @return string
+     * @throws ApiException
+     */
+    public function teachers_canvoteRelationAction($data)
+    {
+        $teacherIdOrName = urldecode($data["teachers"]);
 
+        /** @var TeacherModel $teacher */
+        $teacher = TeacherModel::getByNameOrId($teacherIdOrName,true);
+
+        $vote = new TeacherVoteModel();
+        $vote->teacherId = $teacher->teacher_id;
+        $vote->userIp = ip2long(Utilities::getRealIp());
+        $vote->userAgent = Utilities::getUserAgent();
+
+        $result = $vote->canVote();
+
+        $this->data = $result;
+        return $this->send(200,Cache::NoCache);
+    }
+
+    /**
+     * @param array $data
+     * @return string
+     * @throws ApiException
+     */
+    public function teachers_ratingRelationAction($data)
+    {
+        $teacherIdOrName = urldecode($data["teachers"]);
+
+        /** @var TeacherModel $teacher */
+        $teacher = TeacherModel::getByNameOrId($teacherIdOrName,true);
+        $rating = TeacherRatingModel::getTeacherAvgRatings($teacher->teacher_id);
+        $this->data = $rating->toArray();
+
+        return $this->send(200,Cache::NoCache);
+    }
+
+
+    /**
+     * url POST /v2/teachers/{teacher_name|teacher_id}/vote
+     * parameters: mark_knowledge_subject,mark_exactingess,mark_relation_to_the_student,mark_sense_of_humor
+     * @api
+     * @param array $data
+     * @return string
+     * @throws ApiException
+     */
+    public function teachers_voteRelationAction($data)
+    {
+        if(isset($_SERVER["HTTP_ACCESS_CONTROL_REQUEST_METHOD"]))
+        {
+            if($_SERVER["HTTP_ACCESS_CONTROL_REQUEST_METHOD" != "POST"])
+            {
+                throw new ApiException("Bad request method (POST only)!",400);
+            }
+        }
+
+        if(isset($_SERVER["REQUEST_METHOD"]) || isset($_SERVER["HTTP_ACCESS_CONTROL_REQUEST_METHOD"]))
+        {
+            if($_SERVER["REQUEST_METHOD"] != "POST")
+            {
+                throw new ApiException("Bad request method (POST only)!",400);
+            }
+        }
+
+
+        $mark1 = isset($_REQUEST["mark_knowledge_subject"]) ? floatval($_REQUEST["mark_knowledge_subject"]) : 0;
+        $mark2 = isset($_REQUEST["mark_exactingness"]) ? floatval($_REQUEST["mark_exactingness"]) : 0;
+        $mark3 = isset($_REQUEST["mark_relation_to_the_student"]) ? floatval($_REQUEST["mark_relation_to_the_student"]) : 0;
+        $mark4 = isset($_REQUEST["mark_sense_of_humor"]) ? floatval($_REQUEST["mark_sense_of_humor"]) : 0;
+
+        if(
+            !Utilities::inRange($mark1,1,5) ||
+            !Utilities::inRange($mark2,1,5) ||
+            !Utilities::inRange($mark3,1,5) ||
+            !Utilities::inRange($mark4,1,5)
+        )
+        {
+            throw new ApiException("Invalid parameters: all marks values must be between 1 and 5",400);
+        }
+
+        $teacherIdOrName = urldecode($data["teachers"]);
+
+        /** @var TeacherModel $teacher */
+        $teacher = TeacherModel::getByNameOrId($teacherIdOrName,true);
+
+        $vote = new TeacherVoteModel();
+        $vote->teacherId = $teacher->teacher_id;
+        $vote->ratingMark1 = $mark1;
+        $vote->ratingMark2 = $mark2;
+        $vote->ratingMark3 = $mark3;
+        $vote->ratingMark4 = $mark4;
+        $vote->userIp = ip2long(Utilities::getRealIp());
+        $vote->userAgent = Utilities::getUserAgent();
+        $vote->ratingMarkAvg = round(($mark1+$mark3)/2,2);
+        $vote->userDatetime = time();
+
+        if(!$vote->canVote())
+        {
+            throw new ApiException("You have already voted!",400);
+        }
+
+        // add new vote
+        $vote->save();
+
+        //update teacher rating
+        $teacher->updateRating($vote);
+        $teacher->save();
+
+        $this->message = "Created";
+        $result = array();
+        $result["teacher"] = $teacher->toArray();
+        $result["vote"] = $vote->toArray();
+        $result["rating"] = TeacherRatingModel::getTeacherAvgRatings($teacher->teacher_id)->toArray();
+        $this->data = $result;
+
+        return $this->send(201,Cache::NoCache);
+    }
 
 
     /**

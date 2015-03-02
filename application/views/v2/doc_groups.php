@@ -68,8 +68,9 @@
     </table>
 </div>
 <h4>Пример запроса</h4>
-GET JSON: <a href="<?=HOME?>/v2/groups/?filter={'limit':2,'offset':5}" target="_blank"><?=HOME?>/v2/groups/?filter={'limit':2,'offset':5}</a>
-<br>
+<div class="request">
+GET <a href="<?=HOME?>/v2/groups/?filter={'limit':2,'offset':5}" target="_blank"><?=HOME?>/v2/groups/?filter={'limit':2,'offset':5}</a>
+</div>
 <div data-collapse>
     <h4 class="close">Пример ответа</h4>
     <div>
@@ -101,7 +102,9 @@ GET JSON: <a href="<?=HOME?>/v2/groups/?filter={'limit':2,'offset':5}" target="_
     </table>
 </div>
 <h4>Пример запроса</h4>
-GET JSON: <a href="<?=HOME?>/v2/groups/ia-23" target="_blank"><?=HOME?>/v2/groups/ia-23</a>
+<div class="request">
+GET <a href="<?=HOME?>/v2/groups/ia-23" target="_blank"><?=HOME?>/v2/groups/ia-23</a>
+    </div>
 <div data-collapse>
     <h4 class="close">Пример ответа</h4>
     <div>
@@ -135,21 +138,27 @@ GET JSON: <a href="<?=HOME?>/v2/groups/ia-23" target="_blank"><?=HOME?>/v2/group
     </table>
 </div>
 <h4>Примеры запросов</h4>
-GET JSON: <a href="<?=HOME?>/v2/groups/ia-23/lessons" target="_blank"><?=HOME?>/v2/groups/ia-23/lessons</a>
+<div class="request">
+GET <a href="<?=HOME?>/v2/groups/ia-23/lessons" target="_blank"><?=HOME?>/v2/groups/ia-23/lessons</a>
+    </div>
 <div data-collapse>
     <h4 class="close">Пример ответа</h4>
     <div>
         <p><pre><?=file_get_contents(ROOT."/assets/json_files/group_3_example.json",FILE_USE_INCLUDE_PATH);?></pre></p>
     </div>
 </div>
-GET JSON: <a href="<?=HOME?>/v2/groups/ia-23/teachers" target="_blank"><?=HOME?>/v2/groups/ia-23/teachers</a>
+<div class="request">
+GET <a href="<?=HOME?>/v2/groups/ia-23/teachers" target="_blank"><?=HOME?>/v2/groups/ia-23/teachers</a>
+    </div>
 <div data-collapse>
     <h4 class="close">Пример ответа</h4>
     <div>
         <p><pre><?=file_get_contents(ROOT."/assets/json_files/group_4_example.json",FILE_USE_INCLUDE_PATH);?></pre></p>
     </div>
 </div>
-GET JSON: <a href="<?=HOME?>/v2/groups/ia-23/timetable" target="_blank"><?=HOME?>/v2/groups/ia-23/timetable</a>
+<div class="request">
+GET <a href="<?=HOME?>/v2/groups/ia-23/timetable" target="_blank"><?=HOME?>/v2/groups/ia-23/timetable</a>
+    </div>
 <div data-collapse>
     <h4 class="close">Пример ответа</h4>
     <div>
@@ -270,7 +279,7 @@ GET JSON: <a href="<?=HOME?>/v2/groups/ia-23/timetable" target="_blank"><?=HOME?
 <div id="footer">
     <div class="container">
         <ul class="items-horizontal small left" style="margin-top: 20px">
-            <li>&copy; 2014 api.rozklad.org.ua</li>
+            <li>&copy; 2014-2015 api.rozklad.org.ua</li>
         </ul>
         <ul class="items-inline small">
         </ul>

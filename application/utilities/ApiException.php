@@ -12,6 +12,8 @@ class ApiException extends Exception{
         header("HTTP/1.1 " . $status . " ".BaseApiV2Controller::requestStatus($status) );
         header('Content-Type: application/json; charset=utf-8');
         header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Credentials: true');
+        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
         header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
         $data = json_encode(['statusCode'=>$status,'timeStamp'=>time(),'message'=>$message],JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
         $message = $data;

@@ -6,7 +6,7 @@
  * Time: 1:33
  */
 
-class RoomModel extends Model {
+class RoomModel {
     const TABLE = "`room`";
     const RELATION_TABLE = "`room_lesson`";
     const PRIMARY_KEY = "`room_id`";

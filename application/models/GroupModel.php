@@ -6,7 +6,7 @@
  * Time: 13:27
  */
 
-class GroupModel extends Model {
+class GroupModel {
     const TABLE = "`group`";
     const PRIMARY_KEY = "`group_id`";
 

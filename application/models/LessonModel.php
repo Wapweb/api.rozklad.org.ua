@@ -6,7 +6,7 @@
  * Time: 14:29
  */
 
-class LessonModel extends Model {
+class LessonModel {
     const TABLE = "`lesson`";
     const RELATION_TABLE = "`teacher_lesson`";
     const PRIMARY_KEY = "`lesson_id`";
@@ -57,7 +57,7 @@ class LessonModel extends Model {
         {
             $query = $db->query("
                 SELECT * FROM ".LessonModel::TABLE."
-                    WHERE (group_id  = '$group_id' OR group_id = ".$db->quote($group_name).") $cond ORDER BY lesson_week,day_number ASC
+                    WHERE (group_id  = '$group_id' OR group_id = ".$db->quote($group_name).") $cond ORDER BY lesson_week,day_number,lesson_number ASC
             ");
             while($data = $query->fetch(PDO::FETCH_ASSOC))
             {

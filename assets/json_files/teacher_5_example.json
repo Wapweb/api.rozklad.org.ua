@@ -1,0 +1,35 @@
+{
+    "statusCode": 201,
+    "timeStamp": 1425334936,
+    "message": "Created",
+    "debugInfo": null,
+    "meta": null,
+    "data": {
+        "teacher": {
+            "teacher_id": "3232",
+            "teacher_name": "Терещенко Іван Миколайович",
+            "teacher_full_name": "асистент Терещенко Іван Миколайович",
+            "teacher_short_name": "ас. Терещенко І. М.",
+            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=573d31f0-245f-4d01-b7bc-c95c35828eb6",
+            "teacher_rating": 4
+        },
+        "vote": {
+            "rating_id": 6,
+            "teacher_id": "3232",
+            "mark_knowledge_subject": 5,
+            "mark_exactingess": 4,
+            "mark_relation_to_the_student": 3,
+            "mark_sense_of_humor": 4,
+            "mark_avg": 4,
+            "user_ip": "127.0.0.1",
+            "user_datetime": 1425334936
+        },
+        "rating": {
+            "mark_avg_knowledge_subject": "4.0000",
+            "mark_avg_exactingness": "5.0000",
+            "mark_avg_relation_to_the_student": "3.0000",
+            "mark_avg_sense_of_humor": "4.0000",
+            "mark_count": "1"
+        }
+    }
+}

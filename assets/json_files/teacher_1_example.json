@@ -1,23 +1,29 @@
 {
     "statusCode": 200,
-    "timeStamp": 1421094078,
+    "timeStamp": 1424541149,
     "message": "Ok",
     "debugInfo": null,
     "meta": {
-        "total_count": "3969",
+        "total_count": "3863",
         "offset": 1000,
         "limit": 2
     },
     "data": [
         {
             "teacher_id": "1001",
-            "teacher_name": "Дубровська Вікторія Василівна",
-            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=3fb04844-5ec8-4c0a-926b-cd17814dc7b8"
+            "teacher_name": "Дугін Олександр Леонідович",
+            "teacher_full_name": "асистент Дугін Олександр Леонідович",
+            "teacher_short_name": "ас. Дугін О. Л.",
+            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=7e190262-d8e2-4990-a843-d8d32d33c8b4",
+            "teacher_rating": "0.000"
         },
         {
             "teacher_id": "1002",
-            "teacher_name": "Дубчак Євген Михайлович",
-            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=6a24e206-4333-4b32-9a1e-eb38e78b78cf"
+            "teacher_name": "Дуда Богдан Іванович",
+            "teacher_full_name": "доцент Дуда Богдан Іванович",
+            "teacher_short_name": "доц. Дуда Б. І.",
+            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=c2842a4a-5f56-4d38-b8a2-303c688856c1",
+            "teacher_rating": "0.000"
         }
     ]
 }

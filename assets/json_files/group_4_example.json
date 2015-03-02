@@ -1,114 +1,121 @@
 {
     "statusCode": 200,
-    "timeStamp": 1421089202,
+    "timeStamp": 1421888519,
     "message": "Ok",
     "debugInfo": null,
     "meta": null,
     "data": [
         {
-            "teacher_id": "40",
-            "teacher_name": "Амонс Олександр Анатолійович",
-            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=4356bb21-cfbe-4699-91ac-757a102e86c2"
-        },
-        {
-            "teacher_id": "375",
-            "teacher_name": "Букасов Максим Михайлович",
-            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=aef7fcc7-96c0-4e6f-a930-1c47b6075e0f"
-        },
-        {
-            "teacher_id": "597",
-            "teacher_name": "Галушко Дмитро Олександрович",
-            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=986f0419-3f62-48f7-acb8-2492a2c5029f"
-        },
-        {
-            "teacher_id": "956",
+            "teacher_id": "957",
             "teacher_name": "Долина Віктор Георгійович",
+            "teacher_full_name": "старший викладач Долина Віктор Георгійович",
+            "teacher_short_name": "ст.вик. Долина В. Г.",
             "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=78a5b574-b05e-432b-919d-95f2f165ef36"
         },
         {
-            "teacher_id": "967",
-            "teacher_name": "Дорогий Ярослав Юрійович",
-            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=1eea73f2-9f6d-41d0-97ae-49f444dbfce1"
-        },
-        {
-            "teacher_id": "971",
+            "teacher_id": "972",
             "teacher_name": "Дорошенко Катерина Сергіївна",
+            "teacher_full_name": "асистент Дорошенко Катерина Сергіївна",
+            "teacher_short_name": "ас. Дорошенко К. С.",
             "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=b62429e2-150e-4bbc-81ee-02d78208f582"
         },
         {
-            "teacher_id": "1037",
-            "teacher_name": "Єрешко Ю О",
-            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=b7e47f04-1fcc-488e-9034-58912770499d"
+            "teacher_id": "974",
+            "teacher_name": "Дранник Вікторія Анатоліївна",
+            "teacher_full_name": "викладач Дранник Вікторія Анатоліївна",
+            "teacher_short_name": "вик. Дранник В. А.",
+            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=bf9c83e8-ab1a-4854-9f45-98cd28761468"
         },
         {
-            "teacher_id": "1065",
-            "teacher_name": "Жеребко Валерій Анатолійович",
-            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=606e79ca-339d-4a28-8587-6c095f0266a7"
+            "teacher_id": "1328",
+            "teacher_name": "Катін Павло Юрійович",
+            "teacher_full_name": "старший викладач Катін Павло Юрійович",
+            "teacher_short_name": "ст.вик. Катін П. Ю.",
+            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=b083a31a-cc98-4d30-97ba-c4842c28e281"
         },
         {
-            "teacher_id": "1334",
-            "teacher_name": "Качинська Наталія Федорівна",
-            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=0371a4a2-5465-443d-a685-526f1a326a85"
-        },
-        {
-            "teacher_id": "1350",
+            "teacher_id": "1351",
             "teacher_name": "Килимник О. М.",
+            "teacher_full_name": "асистент Килимник О. М.",
+            "teacher_short_name": "ас. Килимник О. М.",
             "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=d1ef0ddb-e84a-42e4-b18a-5872db12b928"
         },
         {
-            "teacher_id": "2183",
+            "teacher_id": "1629",
+            "teacher_name": "Кравець Петро Іванович",
+            "teacher_full_name": "доцент Кравець Петро Іванович",
+            "teacher_short_name": "доц. Кравець П. І.",
+            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=2e64a2a9-39d1-4074-9af3-e9f09094fc3e"
+        },
+        {
+            "teacher_id": "2185",
             "teacher_name": "Моргаль Олег Михайлович",
+            "teacher_full_name": "старший викладач Моргаль Олег Михайлович",
+            "teacher_short_name": "ст.вик. Моргаль О. М.",
             "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=48c84c9c-7af8-4c08-9c5a-4045aace8756"
         },
         {
-            "teacher_id": "2310",
+            "teacher_id": "2312",
             "teacher_name": "Новацький Анатолій Олександрович",
+            "teacher_full_name": "доцент Новацький Анатолій Олександрович",
+            "teacher_short_name": "доц. Новацький А. О.",
             "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=aaf53a6b-d63a-4997-8fc4-06c68223fa5c"
         },
         {
-            "teacher_id": "2544",
+            "teacher_id": "2546",
             "teacher_name": "Писаренко Андрій Володимирович",
+            "teacher_full_name": "старший викладач Писаренко Андрій Володимирович",
+            "teacher_short_name": "ст.вик. Писаренко А. В.",
             "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=f9e88b1b-5935-4198-ae2f-b354302a13a7"
         },
         {
-            "teacher_id": "2621",
-            "teacher_name": "Полторак Вадим Петрович (АПЕПС) #7471",
-            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=50efba3e-9e4b-4dbe-b836-0ac7ccaca408"
-        },
-        {
-            "teacher_id": "2622",
-            "teacher_name": "Полторак Вадим Петрович (АУТС) #5030",
-            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=8997e0a0-bdcc-4360-94a4-bae05a22afd5"
-        },
-        {
-            "teacher_id": "2665",
-            "teacher_name": "Потіщук Ольга Олегівна",
-            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=7ce805c3-c7b4-4cc7-954e-1245a862edeb"
-        },
-        {
-            "teacher_id": "2672",
-            "teacher_name": "Праховнік Наталія Артурівна",
-            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=f9dcc438-66e6-4687-8ac3-c3de4eb00f4b"
-        },
-        {
-            "teacher_id": "2757",
-            "teacher_name": "Резнік Д. І.",
-            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=bdd5e10b-556d-4a69-b88e-120b8ea97ada"
-        },
-        {
-            "teacher_id": "2765",
+            "teacher_id": "2768",
             "teacher_name": "Репнікова Наталія Борисівна",
+            "teacher_full_name": "доцент Репнікова Наталія Борисівна",
+            "teacher_short_name": "доц. Репнікова Н. Б.",
             "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=c0976766-98a3-45cc-82df-e05b13129271"
         },
         {
-            "teacher_id": "3374",
-            "teacher_name": "Ульяницька К. О.",
-            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=2216cad4-4cc5-4246-bb83-21438dd50d5f"
+            "teacher_id": "2841",
+            "teacher_name": "Руденко Тамара Петрівна",
+            "teacher_full_name": "доцент Руденко Тамара Петрівна",
+            "teacher_short_name": "доц. Руденко Т. П.",
+            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=4fec1168-2096-404b-bd55-696516ac980b"
         },
         {
-            "teacher_id": "3713",
+            "teacher_id": "2939",
+            "teacher_name": "Семенченко Н В",
+            "teacher_full_name": "доцент Семенченко Н В",
+            "teacher_short_name": "доц. Семенченко Н. В.",
+            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=a0cf03e0-5213-4f89-b856-284367861187"
+        },
+        {
+            "teacher_id": "3267",
+            "teacher_name": "Тимофєєва Юлія Сергіївна",
+            "teacher_full_name": "асистент Тимофєєва Юлія Сергіївна",
+            "teacher_short_name": "ас. Тимофєєва Ю. С.",
+            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=f2ce2479-3ec7-4786-a5c7-e7d43f3e4496"
+        },
+        {
+            "teacher_id": "3719",
             "teacher_name": "Шевченко Ольга Миколаївна",
+            "teacher_full_name": "старший викладач Шевченко Ольга Миколаївна",
+            "teacher_short_name": "ст.вик. Шевченко О. М.",
             "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=e4882e95-01aa-4f5f-904c-1dc67efb8607"
+        },
+        {
+            "teacher_id": "3755",
+            "teacher_name": "Шимкович Володимир Миколайович",
+            "teacher_full_name": "асистент Шимкович Володимир Миколайович",
+            "teacher_short_name": "ас. Шимкович В. М.",
+            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=05539928-025d-4f5a-98a0-e56bd6307f3e"
+        },
+        {
+            "teacher_id": "3848",
+            "teacher_name": "Юрчук Леонід Юрійович",
+            "teacher_full_name": "доцент Юрчук Леонід Юрійович",
+            "teacher_short_name": "доц. Юрчук Л. Ю.",
+            "teacher_url": "http://rozklad.kpi.ua/Schedules/ViewSchedule.aspx?v=a4fcf5d2-4937-4524-9157-86cbde69a498"
         }
     ]
 }

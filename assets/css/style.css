@@ -587,3 +587,15 @@ p
     padding-top: 5px;
 }
 
+.request
+{
+    padding: 3px 6px 3px 6px;
+    background: #EEEEEE;
+    color: #56616e;
+    display: inline;
+}
+.request a
+{
+    font-weight: normal;
+}
+

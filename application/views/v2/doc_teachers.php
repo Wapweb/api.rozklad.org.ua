@@ -66,8 +66,9 @@
     </table>
 </div>
 <h4>Пример запроса</h4>
-GET JSON: <a href="<?=HOME?>/v2/teachers/?filter={'limit':2,'offset':1000}" target="_blank"><?=HOME?>/v2/teachers/?filter={'limit':2,'offset':1000}</a>
-<br>
+<div class="request">
+GET <a href="<?=HOME?>/v2/teachers/?filter={'limit':2,'offset':1000}" target="_blank"><?=HOME?>/v2/teachers/?filter={'limit':2,'offset':1000}</a>
+</div>
 <div data-collapse>
     <h4 class="close">Пример ответа</h4>
     <div>
@@ -80,7 +81,7 @@ GET JSON: <a href="<?=HOME?>/v2/teachers/?filter={'limit':2,'offset':1000}" targ
     <table class="table-primary">
         <thead>
         <tr>
-            <th style="width: 50%">Url</th>
+            <th style="width: 60%">Url</th>
             <th>Описание</th>
         </tr>
         </thead>
@@ -95,15 +96,58 @@ GET JSON: <a href="<?=HOME?>/v2/teachers/?filter={'limit':2,'offset':1000}" targ
                 string <i>query</i> - значение поискового запроса (не менее 3 символов)<br>
             </td>
         </tr>
+        <tr>
+            <td data-title="Url">
+                http://api.rozklad.org.ua/v2/teachers/{teacher_name|teacher_id}/canvote
+            </td>
+            <td data-title="Описание">
+                Проверка возможности голосования за преподавателя
+            </td>
+        </tr>
+        <tr>
+            <td data-title="Url">POST http://api.rozklad.org.ua/v2/teachers/{teacher_name|teacher_id}/vote</td>
+            <td data-title="Описание">Проголосовать за преподавателя.<br>
+                Список post параметров:<br>
+                mark_knowledge_subject - знание предмета<br>
+                mark_exactingness - требовательность<br>
+                mark_relation_to_the_student - отношение к студентам<br>
+                mark_sense_of_humor - чувство юмора<br>
+                Значения каждого параметра(оценка): от 1 до 5<br>
+                Все параметры обязательные к заполнению.
+            </td>
+        </tr>
         </tbody>
     </table>
 </div>
-<h4>Пример запроса</h4>
-GET JSON: <a href="<?=HOME?>/v2/teachers/3232" target="_blank"><?=HOME?>/v2/teachers/3232</a>
+<h4>Примеры запросов</h4>
+<div class="request">
+GET <a href="<?=HOME?>/v2/teachers/3232" target="_blank"><?=HOME?>/v2/teachers/3232</a>
+</div>
 <div data-collapse>
     <h4 class="close">Пример ответа</h4>
     <div>
         <p><pre><?=file_get_contents(ROOT."/assets/json_files/teacher_2_example.json",FILE_USE_INCLUDE_PATH);?></pre></p>
+    </div>
+</div>
+<div class="request">
+    GET <a href="<?=HOME?>/v2/teachers/3232/canvote" target="_blank"><?=HOME?>/v2/teachers/3232/canvote</a>
+</div>
+<div data-collapse>
+    <h4 class="close">Пример ответа</h4>
+    <div>
+        <p><pre><?=file_get_contents(ROOT."/assets/json_files/teacher_4_example.json",FILE_USE_INCLUDE_PATH);?></pre></p>
+    </div>
+</div>
+<div class="request">
+    POST <a href="<?=HOME?>/v2/teachers/3232/vote" target="_blank"><?=HOME?>/v2/teachers/3232/vote/</a>
+</div><br><br>
+    <div class="request">
+        POST parameters: mark_knowledge_subject=5&mark_exactingness=4&mark_relation_to_the_student=3&mark_sense_of_humor=3
+    </div>
+<div data-collapse>
+    <h4 class="close">Пример ответа</h4>
+    <div>
+        <p><pre><?=file_get_contents(ROOT."/assets/json_files/teacher_5_example.json",FILE_USE_INCLUDE_PATH);?></pre></p>
     </div>
 </div>
 
@@ -125,7 +169,9 @@ GET JSON: <a href="<?=HOME?>/v2/teachers/3232" target="_blank"><?=HOME?>/v2/teac
     </table>
 </div>
 <h4>Примеры запросов</h4>
-GET JSON: <a href="<?=HOME?>/v2/teachers/Теленик+Сергій+Федорович/lessons" target="_blank"><?=HOME?>/v2/teachers/Теленик+Сергій+Федорович/lessons</a>
+<div class="request">
+GET <a href="<?=HOME?>/v2/teachers/Теленик+Сергій+Федорович/lessons" target="_blank"><?=HOME?>/v2/teachers/Теленик+Сергій+Федорович/lessons</a>
+    </div>
 <div data-collapse>
     <h4 class="close">Пример ответа</h4>
     <div>
@@ -141,7 +187,7 @@ GET JSON: <a href="<?=HOME?>/v2/teachers/Теленик+Сергій+Федор�
 <div id="footer">
     <div class="container">
         <ul class="items-horizontal small left" style="margin-top: 20px">
-            <li>&copy; 2014 api.rozklad.org.ua</li>
+            <li>&copy; 2014-2015 api.rozklad.org.ua</li>
         </ul>
         <ul class="items-inline small">
         </ul>
