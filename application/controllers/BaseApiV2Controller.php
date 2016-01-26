@@ -39,7 +39,7 @@ abstract class BaseApiV2Controller  {
         $response['data'] = $this->data;
 
         //if($isCache == Cache::CanCache)
-           // $this->saveData($response);
+            //$this->saveData($response);
 
 
         return json_encode($response,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
@@ -60,10 +60,20 @@ abstract class BaseApiV2Controller  {
     private function saveData($data)
     {
         $fileName = md5($this->_fc->getQuery()).".cache";
+        $currTime = time();
         if(!file_exists(ROOT.DIRECTORY_SEPARATOR.self::CACHE_DIR.DIRECTORY_SEPARATOR.$fileName))
         {
             $data = serialize($data);
             file_put_contents(ROOT.DIRECTORY_SEPARATOR.self::CACHE_DIR.DIRECTORY_SEPARATOR.$fileName,$data);
+        }
+        else
+        {
+            $fileTime = filemtime($fileName);
+            if(($currTime - 3600*24*2) < $fileTime)
+            {
+                $data = serialize($data);
+                file_put_contents(ROOT.DIRECTORY_SEPARATOR.self::CACHE_DIR.DIRECTORY_SEPARATOR.$fileName,$data);
+            }
         }
     }
 

@@ -49,11 +49,15 @@ class GroupModel {
     );
 
     /**
-     * @param int $offset
-     * @param int $limit
+     * @param null $offset
+     * @param null $limit
+     * @param array $showProperties
+     * @param array $hideProperties
+     * @param bool $hidePropertyNames
      * @return array
+     * @throws ApiException
      */
-    public static function getAll($offset = 0, $limit = 100)
+    public static function getAll($offset = null, $limit = null, array $showProperties = null, array $hideProperties = null, $hidePropertyNames = false)
     {
         /** @var PDO $db */
         $db = Registry::get('db');
@@ -62,21 +66,16 @@ class GroupModel {
             SELECT COUNT(*) FROM ".GroupModel::TABLE."
         ")->fetchColumn();
 
-        $offset = isset($offset) ? abs(intval($offset)) : 0;
-        $limit = isset($limit) ? abs(intval($limit)) : 100;
-        if($limit < 1) $limit = 1;
-        if($limit > 100) $limit = 100;
-
         $result = array();
 
         $query = $db->query("
-            SELECT * FROM ".GroupModel::TABLE." LIMIT $offset , $limit
+            SELECT * FROM ".GroupModel::TABLE." ".($offset !== null && $limit !== null ? "LIMIT $offset , $limit" : "")."
         ");
         while($data = $query->fetch(PDO::FETCH_ASSOC))
         {
             $groupModel = new GroupModel();
             $groupModel->unpack($data);
-            $result['data'][] = $groupModel->toArray();
+            $result['data'][] = $groupModel->toArray($showProperties, $hideProperties, $hidePropertyNames);
         }
         $result['meta']['total_count'] = $count;
         $result['meta']['offset'] = $offset;
@@ -193,8 +192,28 @@ class GroupModel {
         return $result;
     }
 
-    public function toArray()
+    public function toArray(array $showProperties = null, array $hideProperties = null, $hidePropertyNames = false)
     {
+        $result = [];
+        if($showProperties != null)
+        {
+            $properties = get_object_vars($this);
+            foreach($properties as $name => $value)
+            {
+                if(isset($showProperties[$name]))
+                {
+                    $result[$name] = $value;
+                }
+            }
+
+            if(!count($result))
+            {
+                throw new ApiException("Bad Request! Invalid showProperties filter", 400);
+            }
+
+            return $hidePropertyNames ? count($result) == 1 ? current($result) : $result : $result;
+        }
+
         return array(
             "group_id" => abs(intval($this->group_id)),
             "group_full_name" => $this->group_full_name,

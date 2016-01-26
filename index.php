@@ -3,7 +3,7 @@ define('HOME','http://'.$_SERVER['HTTP_HOST']);
 define('ROOT',  dirname( __FILE__ ) );
 
 date_default_timezone_set("Europe/Kiev");
-error_reporting(9);
+error_reporting(E_ALL);
 set_include_path(get_include_path()
     .PATH_SEPARATOR.'application/controllers'
     .PATH_SEPARATOR.'application/models'
@@ -29,6 +29,8 @@ try
         header('Content-Type: application/json; charset=utf-8');
 		header('Access-Control-Allow-Origin: *');
 		header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
+        header('Access-Control-Allow-Credentials: true');
+        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
 		echo json_encode($cacheData,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 	}
 	else

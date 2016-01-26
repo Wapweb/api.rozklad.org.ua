@@ -26,7 +26,7 @@ class TeacherModel extends Model {
      * @param int $limit
      * @return array
      */
-    public static function getAll($offset = 0, $limit = 100)
+    public static function getAll($offset = null, $limit = null, array $showProperties = null, array $hideProperties = null, $hidePropertyNames = false)
     {
         /** @var PDO $db */
         $db = Registry::get('db');
@@ -35,22 +35,17 @@ class TeacherModel extends Model {
             SELECT COUNT(*) FROM ".TeacherModel::TABLE."
         ")->fetchColumn();
 
-        $offset = isset($offset) ? abs(intval($offset)) : 0;
-        $limit = isset($limit) ? abs(intval($limit)) : 100;
-        if($limit < 1) $limit = 1;
-        if($limit > 100) $limit = 100;
-
         $result = array();
 
         $query = $db->query("
-            SELECT * FROM ".TeacherModel::TABLE." LIMIT $offset , $limit
+            SELECT * FROM ".TeacherModel::TABLE." ".($offset !== null && $limit !== null ? "LIMIT $offset , $limit" : "")."
         ");
         while($data = $query->fetch(PDO::FETCH_ASSOC))
         {
             $teacherModel = new TeacherModel();
             $teacherModel->unpack($data);
 
-            $result['data'][] = $teacherModel->toArray();
+            $result['data'][] = $teacherModel->toArray($showProperties,$hideProperties,$hidePropertyNames);
         }
         $result['meta']['total_count'] = $count;
         $result['meta']['offset'] = $offset;
@@ -242,8 +237,28 @@ class TeacherModel extends Model {
         $this->teacher_rating = round($newRating,3);
     }
 
-    public  function toArray()
+    public  function toArray(array $showProperties = null, array $hideProperties = null, $hidePropertyNames = false)
     {
+        $result = [];
+        if($showProperties != null)
+        {
+            $properties = get_object_vars($this);
+            foreach($properties as $name => $value)
+            {
+                if(isset($showProperties[$name]))
+                {
+                    $result[$name] = $value;
+                }
+            }
+
+            if(!count($result))
+            {
+                throw new ApiException("Bad Request! Invalid showProperties filter", 400);
+            }
+
+            return $hidePropertyNames ? count($result) == 1 ? current($result) : $result : $result;
+        }
+
         return array(
             'teacher_id' => $this->teacher_id,
             'teacher_name' => $this->teacher_name,

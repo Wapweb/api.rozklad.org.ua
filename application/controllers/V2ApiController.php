@@ -52,23 +52,16 @@ class V2ApiController extends BaseApiV2Controller {
      */
     public function groupsAction()
     {
-        $allowFilters = ['offset'=>true,'limit'=>true];
+        $allowFilters = ['offset'=>true,'limit'=>true,'showAll'=> true,'showProperties'=>true,'simpleResult'=>true];
         $allowSearch = ['query'=>true];
 
         $params = $this->_fc->getParams();
         $filter = $this->_fc->getFilter();
         $search = $this->_fc->getSearch();
 
-        // check filter
-        if($filter != null)
-        {
-            Utilities::checkFilters($filter,$allowFilters);
-        }
-
-        if($search != null)
-        {
-            Utilities::checkFilters($search,$allowSearch);
-        }
+        // check filters
+        Utilities::checkFilters($filter,$allowFilters);
+        Utilities::checkFilters($search,$allowSearch);
 
         if(isset($params[0]))
         {
@@ -79,7 +72,29 @@ class V2ApiController extends BaseApiV2Controller {
         {
             if($search == null)
             {
-                $data = GroupModel::getAll($filter['offset'],$filter['limit']);
+                $showProperties = null;
+                $hideProperties = null;
+                $hidePropertyNames = false;
+
+                if(isset($filter["showAll"]))
+                {
+                    $offset = null;
+                    $limit = null;
+                    //$showProperties = ['group_full_name'=>true];
+                    $showProperties = is_array($filter["showProperties"]) ? $filter["showProperties"] : [];
+                    $hidePropertyNames = isset($filter["simpleResult"]) ? $filter["simpleResult"] : false;
+                }
+                else
+                {
+                    $offset = isset($filter['offset']) ? abs(intval($filter['offset'])) : 0;
+                    $limit = isset($filter['limit']) ? abs(intval( $filter['limit'])) : 100;
+
+                    if($limit < 1) $limit = 1;
+                    if($limit > 100) $limit = 100;
+                }
+
+
+                $data = GroupModel::getAll($offset,$limit,$showProperties, $hideProperties, $hidePropertyNames);
                 $this->data = $data['data'];
                 $this->meta = $data['meta'];
             }
@@ -102,7 +117,7 @@ class V2ApiController extends BaseApiV2Controller {
      */
     public function teachersAction()
     {
-        $allowFilters = ['offset'=>true,'limit'=>true];
+        $allowFilters = ['offset'=>true,'limit'=>true,'showAll'=> true,'showProperties'=>true,'simpleResult'=>true];
         $allowSearch = ['query'=>true];
 
         $params = $this->_fc->getParams();
@@ -129,7 +144,28 @@ class V2ApiController extends BaseApiV2Controller {
         {
             if($search == null)
             {
-                $data = TeacherModel::getAll($filter['offset'],$filter['limit']);
+                $showProperties = null;
+                $hideProperties = null;
+                $hidePropertyNames = false;
+
+                if(isset($filter["showAll"]))
+                {
+                    $offset = null;
+                    $limit = null;
+                    //$showProperties = ['group_full_name'=>true];
+                    $showProperties = is_array($filter["showProperties"]) ? $filter["showProperties"] : [];
+                    $hidePropertyNames = isset($filter["simpleResult"]) ? $filter["simpleResult"] : false;
+                }
+                else
+                {
+                    $offset = isset($filter['offset']) ? abs(intval($filter['offset'])) : 0;
+                    $limit = isset($filter['limit']) ? abs(intval( $filter['limit'])) : 100;
+
+                    if($limit < 1) $limit = 1;
+                    if($limit > 100) $limit = 100;
+                }
+
+                $data = TeacherModel::getAll($offset,$limit,$showProperties,$hideProperties,$hidePropertyNames);
                 $this->data = $data['data'];
                 $this->meta = $data['meta'];
             }
